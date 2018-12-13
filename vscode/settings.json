@@ -1,0 +1,71 @@
+{
+  "editor.renderIndentGuides": false,
+  "editor.tabSize": 2,
+  "editor.scrollBeyondLastLine": false,
+  "editor.fontLigatures": true,
+  "editor.fontFamily": "Fira Code",
+  "editor.fontSize": 13,
+  "editor.lineHeight": 24,
+  "editor.minimap.enabled": false,
+  "editor.renderControlCharacters": false,
+  "editor.renderWhitespace": "none",
+  "editor.wordBasedSuggestions": true,
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.suggestOnTriggerCharacters": true,
+  "editor.tabCompletion": "on",
+  "editor.suggest.localityBonus": true,
+  "editor.renderLineHighlight": "none",
+  "editor.overviewRulerBorder": false,
+  "editor.hideCursorInOverviewRuler": true,
+  "editor.folding": false,
+  "editor.fontWeight": "600",
+
+  "workbench.colorTheme": "Gruvbox Dark (Medium)",
+  "workbench.activityBar.visible": false,
+  "workbench.editor.showTabs": false,
+  "workbench.editor.tabCloseButton": "off",
+  "workbench.statusBar.visible": true,
+  "workbench.tips.enabled": false,
+  "workbench.statusBar.feedback.visible": false,
+  "workbench.iconTheme": null,
+  "workbench.fontAliasing": "antialiased",
+  "workbench.editor.closeOnFileDelete": true,
+  "workbench.colorCustomizations": {
+    "sideBar.background": "#272727",
+    "editor.background": "#272727",
+    "titleBar.activeBackground": "#272727",
+    "titleBar.inactiveBackground": "#272727",
+    "statusBar.background": "#272727",
+    "statusBar.foreground": "#948372",
+    "statusBar.debuggingBackground": "#272727",
+    "statusBar.debuggingForeground": "#948372"
+  },
+
+  "explorer.decorations.badges": false,
+  "explorer.confirmDelete": false,
+  
+  "eslint.packageManager": "yarn",
+  "eslint.autoFixOnSave": true,
+  
+  "window.titleBarStyle": "custom",
+  "window.zoomLevel": 0,
+
+  "tslint.alwaysShowStatus": true,
+  "tslint.autoFixOnSave": true,
+
+  "terminal.integrated.fontWeight": "600",
+  "zenMode.fullScreen": false,
+  "javascript.validate.enable": false,
+  "npm.packageManager": "yarn",
+  "breadcrumbs.enabled": true,
+  "files.autoSave": "afterDelay",
+  "[typescript]": {
+    "editor.formatOnSave": false,
+  },
+  "[typescriptreact]": {
+    "editor.formatOnSave": false,
+  },
+  "[csharp]": {
+    "editor.codeLens": false,
+  },
+}
