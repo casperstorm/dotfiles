@@ -10,7 +10,7 @@ chunkc core::plugin_dir /usr/local/opt/chunkwm/share/chunkwm/plugins
 #
 # NOTE: if enabled, chunkwm will monitor the specified plugin_dir
 #       and automatically reload any '.so' file that is changed.
-#zf
+#
 
 chunkc core::hotload 1
 
@@ -22,10 +22,10 @@ chunkc set global_desktop_mode           bsp
 chunkc set 2_desktop_mode                monocle
 chunkc set 5_desktop_mode                float
 
-chunkc set global_desktop_offset_top     30
-chunkc set global_desktop_offset_bottom  30
-chunkc set global_desktop_offset_left    30
-chunkc set global_desktop_offset_right   30
+chunkc set global_desktop_offset_top     35
+chunkc set global_desktop_offset_bottom  35
+chunkc set global_desktop_offset_left    35
+chunkc set global_desktop_offset_right   35
 chunkc set global_desktop_offset_gap     15
 
 chunkc set desktop_padding_step_size     10.0
@@ -89,5 +89,5 @@ chunkc core::load tiling.so
 #       to pass value containing a whitespace.
 #
 
-#chunkc tiling::rule --owner Finder --name Copy --state float
-#chunkc tiling::rule --owner \"App Store\" --state float
+chunkc tiling::rule --owner Finder --state float
+chunkc tiling::rule --owner \"App Store\" --state float
