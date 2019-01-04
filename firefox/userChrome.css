@@ -88,7 +88,32 @@ tab {
 
 /* Drag space */
 .titlebar-placeholder[type="pre-tabs"] {
-  margin-left: -53px;
+  margin-left: -50px;
+}
+
+/* No close tab button */
+.tabbrowser-tab .tab-close-button {
+  visibility: collapse !important;
+}
+
+/* new tab */
+@-moz-document url(about:newtab), url(about:home) {
+  body {
+	background-color: #323234 !important;
+	color: #D1D1D1 !important;
+  }
+}
+
+/* remove ... dots */
+/* Remove Page Actions Menu */
+#pageActionButton 
+{
+  display: none !important;
+}
+/* Put refresh button "inside" address bar */
+#pageActionSeparator
+{
+    margin-right:26px !important;
 }
 
 /* hides color line on top of tabs */

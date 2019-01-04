@@ -8,7 +8,7 @@ export ZSH=/Users/crs/.oh-my-zsh
 ZSH_THEME="dracula"
 
 # Plugins
-plugins=(git git-extra z colorize zsh-syntax-highlightning npm)
+plugins=(fzf git git-extra z colorize zsh-syntax-highlightning npm)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -31,5 +31,11 @@ export PATH=${PATH}:${HOME}/.gem/ruby/2.3.0/bin
 export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
+# TMUX
+alias tm="tmux attach || tmux new"
+
 # Fastlane
 export PATH="$HOME/.fastlane/bin:$PATH"
+
+# ZFZ Fuzzy search
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
