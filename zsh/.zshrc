@@ -32,7 +32,7 @@ export NVM_DIR="$HOME/.nvm"
 . "/usr/local/opt/nvm/nvm.sh"
 
 # TMUX
-alias tm="tmux attach || tmux new"
+alias tm="tmux -u attach || tmux -u new"
 
 # Fastlane
 export PATH="$HOME/.fastlane/bin:$PATH"
