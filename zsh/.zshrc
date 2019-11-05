@@ -13,7 +13,7 @@ plugins=(fzf git git-extra z colorize zsh-syntax-highlightning npm)
 source $ZSH/oh-my-zsh.sh
 
 # User
-export LANG=en_US.UTF-8
+export LANG=en_US.UTF-8 LC_CTYPE="en_US.UTF-8"
 export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
 
 # Android
@@ -34,8 +34,16 @@ export NVM_DIR="$HOME/.nvm"
 # TMUX
 alias tm="tmux -u attach || tmux -u new"
 
+# todo.cli
+alias t="todo.sh"
+
 # Fastlane
 export PATH="$HOME/.fastlane/bin:$PATH"
 
 # ZFZ Fuzzy search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Firebase CLI
+export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/icu4c/bin:$PATH"
+export PATH="/usr/local/opt/icu4c/sbin:$PATH"
