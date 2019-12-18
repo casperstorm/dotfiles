@@ -1,0 +1,39 @@
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Theme
+ZSH_THEME="dracula"
+
+# Plugins
+plugins=(fzf git git-extra z colorize zsh-syntax-highlightning npm)
+source $ZSH/oh-my-zsh.sh
+
+# User
+export LANG="en_US.UTF-8"
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# Android
+# export ANDROID_HOME=${HOME}/Library/Android/sdk
+# export PATH=${PATH}:${ANDROID_HOME}/tools
+# export PATH=${PATH}:${ANDROID_HOME}/platform-tools
+# export PATH=${PATH}:/Library/Frameworks/Mono.framework/Versions/Current/bin/
+
+# alias emulator="$ANDROID_HOME/tools/emulator"
+
+# User Ruby Gems
+export PATH=${PATH}:${HOME}/.gem/ruby/2.3.0/bin
+
+# NVM
+export NVM_DIR="$HOME/.nvm"
+. "/usr/local/opt/nvm/nvm.sh"
+
+# TMUX
+alias tm="tmux -u attach || tmux -u new"
+
+# ZFZ Fuzzy search
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Firebase CLI
+# export PATH="/usr/local/sbin:$PATH"
+# export PATH="/usr/local/opt/icu4c/bin:$PATH"
+# export PATH="/usr/local/opt/icu4c/sbin:$PATH"
