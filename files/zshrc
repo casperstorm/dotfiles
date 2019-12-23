@@ -1,0 +1,31 @@
+# Autocompletion
+if type brew &>/dev/null; then
+  FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+fi
+
+# Path to your oh-my-zsh installation.
+export ZSH=$HOME/.oh-my-zsh
+
+# Theme
+ZSH_THEME="dracula"
+
+# Plugins
+plugins=(fzf git git-extra z colorize zsh-syntax-highlightning npm)
+source $ZSH/oh-my-zsh.sh
+
+# User
+export LANG="en_US.UTF-8"
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+
+# User Ruby Gems
+export PATH=${PATH}:${HOME}/.gem/ruby/2.3.0/bin
+
+# asdf
+. /usr/local/opt/asdf/asdf.sh
+
+# TMUX
+TMUX_CONFIG="~/.config/tmux/.tmux.conf"
+alias tm="tmux -f $TMUX_CONFIG -u attach || tmux -f $TMUX_CONFIG -u new"
+
+# ZFZ Fuzzy search
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
