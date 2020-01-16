@@ -10,15 +10,12 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="dracula"
 
 # Plugins
-plugins=(fzf git git-extra z colorize zsh-syntax-highlightning npm)
+plugins=(fzf git git-extra z zsh-syntax-highlightning npm colored-man-pages colorize pip python brew osx zsh-autosuggestions)
 source $ZSH/oh-my-zsh.sh
 
 # User
 export LANG="en_US.UTF-8"
 export PATH=$HOME/bin:/usr/local/bin:$PATH
-
-# User Ruby Gems
-export PATH=${PATH}:${HOME}/.gem/ruby/2.3.0/bin
 
 # asdf
 . /usr/local/opt/asdf/asdf.sh
@@ -29,3 +26,16 @@ alias tm="tmux -f $TMUX_CONFIG -u attach || tmux -f $TMUX_CONFIG -u new"
 
 # ZFZ Fuzzy search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# zsh completions
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+# zsh autosuggestions
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+
+# zsh highlightning
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
+
+
+
