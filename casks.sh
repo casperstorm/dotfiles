@@ -1,6 +1,10 @@
 #!/bin/bash
 source ./helpers.sh
 
+cask_dependency alacritty	
+mkdir -p ~/.config/alacritty	
+symlink ./files/alacritty.yml ~/.config/alacritty/alacritty.yml
+
 cask_dependency visual-studio-code
 cask_dependency iterm2
 cask_dependency alfred

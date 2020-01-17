@@ -2,7 +2,7 @@
 
 # bar settings
 yabai -m config status_bar                   on
-yabai -m config status_bar_text_font         "Fira Code:Retina:12.0"
+yabai -m config status_bar_text_font         "Cascadia Code:Regular:12.0"
 yabai -m config status_bar_background_color  0xff2e3440
 yabai -m config status_bar_foreground_color  0xffd8dee9
 yabai -m config status_bar_space_icon_strip  I II III IV V VI VII VIII IX X
