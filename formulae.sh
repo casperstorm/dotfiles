@@ -14,6 +14,11 @@ dependency yabai
 mkdir -p ~/.config/yabai
 symlink ./files/yabairc ~/.config/yabai/.yabairc
 
+dependency koekeishiya/formulae/skhd
+mkdir -p ~/.config/skhd
+symlink ./files/skhdrc ~/.skhdrc
+# Note: This should be moved to ~/.config/skhd/skhdrc at somepoint, but failing for now.
+
 dependency tmux
 mkdir -p ~/.config/tmux
 symlink ./files/tmux.conf ~/.config/.tmux.conf

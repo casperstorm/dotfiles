@@ -3,9 +3,9 @@
 # bar settings
 yabai -m config status_bar                   on
 yabai -m config status_bar_text_font         "Fira Code:Retina:12.0"
-yabai -m config status_bar_background_color  0xff000000
-yabai -m config status_bar_foreground_color  0xffa8a8a8
-yabai -m config status_bar_space_icon_strip  1  2  3  4  5 6 7 8 9 10
+yabai -m config status_bar_background_color  0xff2e3440
+yabai -m config status_bar_foreground_color  0xffd8dee9
+yabai -m config status_bar_space_icon_strip  I II III IV V VI VII VIII IX X
 
 # global settings
 yabai -m config mouse_follows_focus          off
