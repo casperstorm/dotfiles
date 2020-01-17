@@ -9,6 +9,7 @@ dependency z
 dependency asdf
 dependency yarn
 
+brew tap koekeishiya/formulae
 dependency yabai
 mkdir -p ~/.config/yabai
 symlink ./files/yabairc ~/.config/yabai/.yabairc
