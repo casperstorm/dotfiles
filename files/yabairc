@@ -42,5 +42,5 @@ yabai -m rule --add app=Simulator manage=off border=off
 yabai -m rule --add app=Preview manage=off border=off
 yabai -m rule --add app=Messages manage=off border=off
 yabai -m rule --add app=Signal manage=off border=off
-
-echo "yabai configuration loaded.."
+yabai -m rule --add app=Finder manage=off border=off
+yabai -m rule --add app=Wire manage=off border=off

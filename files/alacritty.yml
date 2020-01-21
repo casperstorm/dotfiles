@@ -1,3 +1,5 @@
+use_thin_strokes: true
+
 window:	
   decorations: buttonless	
   padding:	

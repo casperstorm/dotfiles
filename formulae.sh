@@ -12,7 +12,7 @@ dependency yarn
 brew tap koekeishiya/formulae
 dependency yabai
 mkdir -p ~/.config/yabai
-symlink ./files/yabairc ~/.config/yabai/.yabairc
+symlink ./files/yabairc ~/.config/yabai/yabairc
 
 dependency koekeishiya/formulae/skhd
 mkdir -p ~/.config/skhd
