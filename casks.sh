@@ -10,4 +10,3 @@ cask_dependency alfred
 cask_dependency qlstephen
 cask_dependency brave-browser
 cask_dependency protonvpn
-cask_dependency font-fira-code
