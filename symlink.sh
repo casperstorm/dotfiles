@@ -20,7 +20,7 @@ mkdir -p ~/.config/tmux
 mkdir -p ~/.config/tmux/themes
 mkdir -p ~/.config/alacritty	
 
-# symlinking
+# Symlinking
 symlink ./files/alacritty.yml ~/.config/alacritty/alacritty.yml
 symlink ./files/asdfrc ~/.config/asdf/asdfrc
 symlink ./files/yabairc ~/.config/yabai/yabairc
