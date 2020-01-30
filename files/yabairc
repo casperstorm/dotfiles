@@ -3,8 +3,8 @@
 # bar settings
 yabai -m config status_bar                   on
 yabai -m config status_bar_text_font         "Cascadia Code:Regular:12.0"
-yabai -m config status_bar_background_color  0xff2e3440
-yabai -m config status_bar_foreground_color  0xffd8dee9
+yabai -m config status_bar_background_color  0xff2E3440
+yabai -m config status_bar_foreground_color  0xffD8DEE9
 yabai -m config status_bar_space_icon_strip  I II III IV V VI VII VIII IX X
 
 # global settings
@@ -13,7 +13,7 @@ yabai -m config focus_follows_mouse          off
 yabai -m config window_placement             second_child
 yabai -m config window_topmost               off
 yabai -m config window_opacity               off
-yabai -m config window_shadow                on
+yabai -m config window_shadow                off
 yabai -m config window_border                off
 yabai -m config window_border_radius         25
 yabai -m config window_border_width          4
@@ -30,11 +30,11 @@ yabai -m config mouse_action2                resize
 
 # general space settings
 yabai -m config layout                       bsp
-yabai -m config top_padding                  20
-yabai -m config bottom_padding               20
-yabai -m config left_padding                 20
-yabai -m config right_padding                20
-yabai -m config window_gap                   10
+yabai -m config top_padding                  15
+yabai -m config bottom_padding               15
+yabai -m config left_padding                 15
+yabai -m config right_padding                15
+yabai -m config window_gap                   15
 
 # rules
 yabai -m rule --add app="^System Preferences$" manage=off border=off
@@ -44,3 +44,27 @@ yabai -m rule --add app=Messages manage=off border=off
 yabai -m rule --add app=Signal manage=off border=off
 yabai -m rule --add app=Finder manage=off border=off
 yabai -m rule --add app=Wire manage=off border=off
+
+
+yabai -m space 1 --label "Primary"
+yabai -m space 2 --label "Secondary"
+yabai -m space 3 --label "Company"
+yabai -m space 4 --label "Media"
+yabai -m space 5 --label "Foat"
+
+# main
+yabai -m rule --add app="^Alacritty$"  space=1
+yabai -m rule --add app="^Code$"  space=1
+
+# secondary
+yabai -m rule --add app="^Brave$"  space=2
+
+# company
+yabai -m rule --add app="^Slack$"  space=3
+
+# music
+yabai -m rule --add app="^Spotify$"  space=4
+
+# floating
+yabai -m config --space 5 layout float
+yabai -m rule --add app="^System Preferences$"  space=5

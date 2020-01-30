@@ -10,7 +10,7 @@ export ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="dracula"
 
 # Plugins
-plugins=(fzf git git-extra z zsh-syntax-highlightning npm colored-man-pages colorize pip python brew osx zsh-autosuggestions)
+plugins=(fzf git z colored-man-pages colorize pip python brew osx)
 source $ZSH/oh-my-zsh.sh
 
 # User
@@ -46,10 +46,3 @@ float() {
   eval $CMD
   echo "$CMD" | tee -a ~/.config/yabai/yabairc
 }
-
-# To be removed.
-export ANDROID_HOME=$HOME/Library/Android/sdk
-export PATH=$PATH:$ANDROID_HOME/emulator
-export PATH=$PATH:$ANDROID_HOME/tools
-export PATH=$PATH:$ANDROID_HOME/tools/bin
-export PATH=$PATH:$ANDROID_HOME/platform-tools

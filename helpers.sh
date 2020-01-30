@@ -23,11 +23,6 @@ function dependency {
 }
 
 function cask_dependency {
-    if ! brew cask info $1 &>/dev/null; then
-        echo "Installing $1..."
-        brew cask install $1
-    else
-        echo "Updating $1..."
-        brew cask upgrade $1
-    fi
+    echo "Installing $1..."
+    brew cask install $1
 }
