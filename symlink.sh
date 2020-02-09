@@ -22,12 +22,12 @@ mkdir -p ~/.config/alacritty
 mkdir -p ~/.config/nvim
 
 # Symlinking
-symlink ./files/alacritty.yml ~/.config/alacritty/alacritty.yml
-symlink ./files/asdfrc ~/.config/asdf/asdfrc
-symlink ./files/yabairc ~/.config/yabai/yabairc
-symlink ./files/skhdrc ~/.config/skhd/skhdrc
-symlink ./files/tmux.conf ~/.config/tmux/.tmux.conf
-symlink ./files/zshrc ~/.zshrc
+symlink ./files/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+symlink ./files/asdf/asdfrc ~/.config/asdf/asdfrc
+symlink ./files/yabai/yabairc ~/.config/yabai/yabairc
+symlink ./files/skhd/skhdrc ~/.config/skhd/skhdrc
+symlink ./files/tmux/tmux.conf ~/.config/tmux/.tmux.conf
+symlink ./files/zsh/zshrc ~/.zshrc
 symlink ./files/nvim/init.vim ~/.config/nvim/init.vim
 symlink ./files/nvim/plugins.vim ~/.config/nvim/plugins.vim
 symlink ./files/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
