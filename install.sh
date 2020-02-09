@@ -14,10 +14,11 @@ brew install yarn
 brew install yabai
 brew install koekeishiya/formulae/skhd
 brew install zsh
-brew install zsh-completions 
-brew install zsh-syntax-highlighting 
+brew install zsh-completions
+Brew install zsh-syntax-highlighting
 brew install zsh-autosuggestions
+brew install neovim
 
-brew cask install alacritty	
+brew cask install alacritty
 
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"

@@ -18,7 +18,8 @@ mkdir -p ~/.config/yabai
 mkdir -p ~/.config/skhd
 mkdir -p ~/.config/tmux
 mkdir -p ~/.config/tmux/themes
-mkdir -p ~/.config/alacritty	
+mkdir -p ~/.config/alacritty
+mkdir -p ~/.config/nvim
 
 # Symlinking
 symlink ./files/alacritty.yml ~/.config/alacritty/alacritty.yml
@@ -27,3 +28,6 @@ symlink ./files/yabairc ~/.config/yabai/yabairc
 symlink ./files/skhdrc ~/.config/skhd/skhdrc
 symlink ./files/tmux.conf ~/.config/tmux/.tmux.conf
 symlink ./files/zshrc ~/.zshrc
+symlink ./files/nvim/init.vim ~/.config/nvim/init.vim
+symlink ./files/nvim/plugins.vim ~/.config/nvim/plugins.vim
+symlink ./files/nvim/coc-settings.json ~/.config/nvim/coc-settings.json
