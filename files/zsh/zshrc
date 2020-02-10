@@ -36,6 +36,7 @@ export TERM=xterm-256color
 # Alias
 alias l='ls -lAFh'    #long list,show almost all,show type,human readable
 alias ll='l'
+alias vim='nvim'
 
 # ZFZ Fuzzy search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -49,8 +50,3 @@ source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 # zsh highlightning
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
-
-
-
-
-

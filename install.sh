@@ -90,7 +90,7 @@ echo "---------------------------------------------------------"
 echo "$(tput setaf 2)ASYNC: Installing system applications$(tput sgr 0)"
 echo "---------------------------------------------------------"
 
-# brew cask install alacritty
+brew cask install alacritty
 
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)ASYNC: Installing system fonts.$(tput sgr 0)"

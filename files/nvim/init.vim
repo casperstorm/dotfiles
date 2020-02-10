@@ -13,6 +13,8 @@ let g:mapleader=','
 
 " Relative line numbers
 set relativenumber
+set number
+set number relativenumber
 
 " Don't show last command
 set noshowcmd
@@ -136,8 +138,11 @@ inoremap <silent><expr> <TAB>
       \ <SID>check_back_space() ? "\<TAB>" :
       \ coc#refresh()
 
-"Close preview window when completion is done.
+" Close preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
+
+" Enable prettier
+command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
 let g:coc_global_extensions = [
   \ 'coc-snippets',
