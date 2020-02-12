@@ -119,7 +119,7 @@ echo "---------------------------------------------------------"
 source symlink.sh
 
 echo "---------------------------------------------------------"
-echo "$(tput setaf 2)ASYNC: Installing neovim plugins and linking dotfiles.$(tput sgr 0)"
+echo "$(tput setaf 2)ASYNC: Installing neovim plugins.$(tput sgr 0)"
 echo "---------------------------------------------------------"
 
 nvim +PlugInstall +qall
@@ -133,7 +133,6 @@ sudo sh -c "echo $(which zsh) >> /etc/shells"
 chsh -s $(which zsh)
 
 echo "---------------------------------------------------------"
-echo "$(tput setaf 2)ASYNC: System update complete. Currently running at 100% power. Enjoy.$(tput sgr 0)"
+echo "$(tput setaf 2)ASYNC: All done, enjoy.$(tput sgr 0)"
 echo "---------------------------------------------------------"
-
 exit 0
