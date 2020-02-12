@@ -17,12 +17,13 @@ mkdir -p ~/.config/asdf
 mkdir -p ~/.config/yabai
 mkdir -p ~/.config/skhd
 mkdir -p ~/.config/tmux
-mkdir -p ~/.config/tmux/themes
-mkdir -p ~/.config/alacritty
+mkdir -p ~/.config/tmux/plugins
+mkdir -p ~/.config/kitty
 mkdir -p ~/.config/nvim
 
 # Symlinking
-symlink ./files/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+symlink ./files/kitty/kitty.conf ~/.config/kitty/kitty.conf
+symlink ./files/kitty/nord.conf ~/.config/kitty/nord.conf
 symlink ./files/asdf/asdfrc ~/.config/asdf/asdfrc
 symlink ./files/yabai/yabairc ~/.config/yabai/yabairc
 symlink ./files/skhd/skhdrc ~/.config/skhd/skhdrc

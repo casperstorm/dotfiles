@@ -30,6 +30,9 @@ export ASDF_CONFIG_FILE="~/.config/asdf/.asdfrc"
 export TMUX_CONFIG="~/.config/tmux/.tmux.conf"
 alias tm="tmux -f $TMUX_CONFIG -u attach || tmux -f $TMUX_CONFIG -u new"
 
+# Weechat
+alias weechat="weechat -d ~/.config/weechat"
+
 # to get autosuggestion to work properly with color in tmux
 export TERM=xterm-256color
 

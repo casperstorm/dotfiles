@@ -56,13 +56,7 @@ Plug 'HerringtonDarkholme/yats.vim'
 " ReactJS JSX syntax highlighting
 Plug 'mxw/vim-jsx'
 
-" Generate JSDoc commands based on function signature
-Plug 'heavenshell/vim-jsdoc'
-
 " === Syntax Highlighting === "
-
-" Syntax highlighting for nginx
-Plug 'chr4/nginx.vim'
 
 " Syntax highlighting for javascript libraries
 Plug 'othree/javascript-libraries-syntax.vim'
@@ -82,8 +76,11 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
 " Icons
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+
+" Common navigation of tmux and nvim windows
+Plug 'christoomey/vim-tmux-navigator'
 
 " Initialize plugin system
 call plug#end()

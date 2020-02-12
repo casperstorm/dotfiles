@@ -37,6 +37,7 @@ packages=(
   "asdf"
   "coreutils"
   "gpg"
+  "tmux"
 )
 
 for i in "${packages[@]}"
@@ -90,7 +91,7 @@ echo "---------------------------------------------------------"
 echo "$(tput setaf 2)ASYNC: Installing system applications$(tput sgr 0)"
 echo "---------------------------------------------------------"
 
-brew cask install alacritty
+brew cask install kitty
 
 echo "---------------------------------------------------------"
 echo "$(tput setaf 2)ASYNC: Installing system fonts.$(tput sgr 0)"
