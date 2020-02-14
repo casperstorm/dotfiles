@@ -2,8 +2,6 @@
 scriptencoding utf-8
 source ~/.config/nvim/plugins.vim
 
-" This file is based on https://github.com/ctaylo21/jarvis
-
 " ============================================================================ "
 " ===                           EDITING OPTIONS                            === "
 " ============================================================================ "
@@ -11,10 +9,8 @@ source ~/.config/nvim/plugins.vim
 " Remap leader key to ,
 let g:mapleader=','
 
-" Relative line numbers
-set relativenumber
+" Line numbers
 set number
-set number relativenumber
 
 " Don't show last command
 set noshowcmd
@@ -186,6 +182,9 @@ try
 " Enable extensions
 let g:airline_extensions = ['branch', 'hunks', 'coc']
 
+" Powerline fonts for airline
+let g:airline_powerline_fonts = 1
+
 " Update section z to just have line number
 let g:airline_section_z = airline#section#create(['linenr'])
 
@@ -253,14 +252,14 @@ let g:signify_sign_delete = '-'
 " ============================================================================ "
 
 " Enable true color support
+" Currently disabled because of this issue:
+" https://github.com/neovim/neovim/issues/2528
 " set termguicolors
 
 " Editor theme
 " set background=dark
 colorscheme nord
-
-" Vim airline theme
-" let g:airline_theme='base16_nord'
+" Works with both enabled and disabled option.
 
 " Change vertical split character to be a space (essentially hide it)
 set fillchars+=vert:.
@@ -272,7 +271,7 @@ set splitbelow
 set noshowmode
 
 " Set floating window to be slightly transparent
-set winbl=10
+set winbl=0
 
 " coc.nvim color changes
 hi! link CocErrorSign WarningMsg

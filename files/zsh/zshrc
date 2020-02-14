@@ -34,7 +34,9 @@ alias tm="tmux -f $TMUX_CONFIG -u attach || tmux -f $TMUX_CONFIG -u new"
 alias weechat="weechat -d ~/.config/weechat"
 
 # to get autosuggestion to work properly with color in tmux
-export TERM=xterm-256color
+# export TERM=xterm-256color
+# Enabled true color support for terminals
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 # Alias
 alias l='ls -lAFh'    #long list,show almost all,show type,human readable

@@ -25,9 +25,6 @@ call plug#begin('~/.config/nvim/plugged')
 " Trailing whitespace highlighting & automatic fixing
 Plug 'ntpeters/vim-better-whitespace'
 
-" auto-close plugin
-Plug 'rstacruz/vim-closer'
-
 " Improved motion in Vim
 Plug 'easymotion/vim-easymotion'
 
@@ -81,6 +78,10 @@ Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Common navigation of tmux and nvim windows
 Plug 'christoomey/vim-tmux-navigator'
+
+" Deprecated (removed because they are unsured for now)
+" auto-close plugin
+" Plug 'rstacruz/vim-closer'
 
 " Initialize plugin system
 call plug#end()

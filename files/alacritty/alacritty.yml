@@ -12,11 +12,18 @@ window:
 font:
   size: 12.0
   use_thin_strokes: true
+ 
   normal:
-    family: Cascadia Code
+    family: JetBrains Mono
     style: Regular
 
-background_opacity: 1.00
+  bold:
+    family: JetBrains Mono
+    style: Bold
+
+  italic:
+    family: JetBrains Mono
+    style: Italic
 
 colors:
   primary:
