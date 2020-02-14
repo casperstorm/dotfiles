@@ -43,6 +43,22 @@ alias l='ls -lAFh'    #long list,show almost all,show type,human readable
 alias ll='l'
 alias vim='nvim'
 
+# Set default editor to nvim
+export EDITOR='nvim'
+
+# Setting rg as the default source for fzf
+export FZF_DEFAULT_COMMAND='rg --files'
+
+# fcb [FUZZY PATTERN] - Checkout specified branch
+# Include remote branches, sorted by most recent commit and limited to 30
+fcb() {
+  local branches branch
+  branches=$(git for-each-ref --count=30 --sort=-committerdate refs/heads/ --format="%(refname:short)") &&
+  branch=$(echo "$branches" |
+           fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
 # ZFZ Fuzzy search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
