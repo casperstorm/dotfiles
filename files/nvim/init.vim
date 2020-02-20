@@ -7,7 +7,7 @@ source ~/.config/nvim/plugins.vim
 " ============================================================================ "
 
 " Remap leader key to ,
-let g:mapleader=','
+let g:mapleader=" "
 
 " Line numbers
 set number
@@ -63,7 +63,7 @@ try
 "   --glob:  Include or exclues files for searching that match the given glob
 "            (aka ignore .git files)
 "
-call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git'])
+call denite#custom#var('file/rec', 'command', ['rg', '--files', '--glob', '!.git', '--hidden'])
 
 " Use ripgrep in place of "grep"
 call denite#custom#var('grep', 'command', ['rg'])
@@ -382,11 +382,6 @@ endfunction
 "  <leader>f - Opens current file location in NERDTree
 nmap <leader>n :NERDTreeToggle<CR>
 nmap <leader>f :NERDTreeFind<CR>
-
-"   <Space> - PageDown
-"   -       - PageUp
-noremap <Space> <PageDown>
-noremap - <PageUp>
 
 " Quick window switching
 nmap <C-h> <C-w>h
