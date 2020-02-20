@@ -7,12 +7,12 @@ fi
 export ZSH=$HOME/.oh-my-zsh
 
 # theme
-ZSH_THEME=""
+ZSH_THEME="spaceship"
 
-# https://github.com/sindresorhus/pure
-fpath+=("$HOME/.config/zsh/pure")
-autoload -U promptinit; promptinit
-prompt pure
+# spaceship promt
+SPACESHIP_PACKAGE_SHOW=false
+SPACESHIP_NODE_SHOW=false
+SPACESHIP_CHAR_SUFFIX=" "
 
 # Plugins
 plugins=(fzf git z colored-man-pages colorize pip python brew osx)

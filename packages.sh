@@ -30,7 +30,7 @@ taps=(
 )
 
 function additional_setup {
-  options=("NeoVim" "ZSH")
+  options=("NeoVim" "ZSH and Promt")
   select opt in "${options[@]}"
   do
     case $opt in
@@ -43,6 +43,11 @@ function additional_setup {
         break
         ;;
       "${options[1]}")
+        message "Downloading <spaceship> promt for zsh"
+
+        git clone https://github.com/denysdovhan/spaceship-prompt.git "$ZSH_CUSTOM/themes/spaceship-prompt"
+        ln -s "$ZSH_CUSTOM/themes/spaceship-prompt/spaceship.zsh-theme" "$ZSH_CUSTOM/themes/spaceship.zsh-theme"
+
         message "Changing default shell to ZSH."
 
         sudo sh -c "echo $(which zsh) >> /etc/shells"
