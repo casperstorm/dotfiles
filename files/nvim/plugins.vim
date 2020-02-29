@@ -25,8 +25,8 @@ call plug#begin('~/.config/nvim/plugged')
 " Trailing whitespace highlighting & automatic fixing
 Plug 'ntpeters/vim-better-whitespace'
 
-" Improved motion in Vim
-Plug 'easymotion/vim-easymotion'
+" The set of operator and textobject plugins to search/select/edit sandwiched
+Plug 'machakann/vim-sandwich'
 
 " Intellisense Engine
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
@@ -41,17 +41,15 @@ Plug 'Shougo/neosnippet-snippets'
 " Print function signatures in echo area
 Plug 'Shougo/echodoc.vim'
 
-" === Git Plugins === "
-" Enable git changes to be shown in sign column
-Plug 'mhinz/vim-signify'
-Plug 'tpope/vim-fugitive'
+Plug 'sheerun/vim-polyglot'
 
 " === Javascript Plugins === "
 " Typescript syntax highlighting
-Plug 'HerringtonDarkholme/yats.vim'
+" Plug 'HerringtonDarkholme/yats.vim'
 
 " ReactJS JSX syntax highlighting
-Plug 'mxw/vim-jsx'
+" Plug 'yuezk/vim-js'
+" Plug 'maxmellon/vim-jsx-pretty'
 
 " === Syntax Highlighting === "
 
@@ -59,7 +57,7 @@ Plug 'mxw/vim-jsx'
 Plug 'othree/javascript-libraries-syntax.vim'
 
 " Improved syntax highlighting and indentation
-Plug 'othree/yajs.vim'
+" Plug 'othree/yajs.vim'
 
 " === UI === "
 " File explorer
@@ -70,18 +68,9 @@ Plug 'arcticicestudio/nord-vim'
 
 " Customized vim status line
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-
-" Icons
-" Plug 'ryanoasis/vim-devicons'
-Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Common navigation of tmux and nvim windows
 Plug 'christoomey/vim-tmux-navigator'
-
-" Deprecated (removed because they are unsured for now)
-" auto-close plugin
-" Plug 'rstacruz/vim-closer'
 
 " Initialize plugin system
 call plug#end()

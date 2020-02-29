@@ -48,6 +48,7 @@ yabai -m rule --add app="^SnippetsLab$" manage=off border=off
 yabai -m rule --add app="^Marta$" manage=off border=off
 yabai -m rule --add app="^1Password 7$" manage=off border=off
 yabai -m rule --add app="^Fork$" manage=off border=off
+yabai -m rule --add app="^QuickTime Player$" manage=off border=off
 
 yabai -m space 1 --label "Primary"
 yabai -m space 2 --label "Secondary"

@@ -1,4 +1,3 @@
-
 scriptencoding utf-8
 source ~/.config/nvim/plugins.vim
 
@@ -105,7 +104,7 @@ let s:denite_options = {'default' : {
 \ 'highlight_window_background': 'Visual',
 \ 'highlight_filter_background': 'DiffAdd',
 \ 'winrow': 1,
-\ 'vertical_preview': 1
+\ 'vertical_preview': 1,
 \ }}
 
 " Loop through denite options and enable them
@@ -147,6 +146,7 @@ let g:coc_global_extensions = [
   \ 'coc-eslint',
   \ 'coc-prettier',
   \ 'coc-json',
+  \ 'coc-omnisharp',
   \ ]
 
 " === NeoSnippet === "
@@ -180,7 +180,7 @@ try
 
 " === Vim airline ==== "
 " Enable extensions
-let g:airline_extensions = ['branch', 'hunks', 'coc']
+let g:airline_extensions = ['branch', 'coc']
 
 " Powerline fonts for airline
 let g:airline_powerline_fonts = 1
@@ -197,16 +197,13 @@ let g:airline#extensions#tabline#formatter = 'unique_tail'
 " Custom setup that removes filetype/whitespace from default vim airline bar
 let g:airline#extensions#default#layout = [['a', 'b', 'c'], ['x', 'z', 'warning', 'error']]
 
-let airline#extensions#coc#stl_format_err = '%E{[%e(#%fe)]}'
-
-let airline#extensions#coc#stl_format_warn = '%W{[%w(#%fw)]}'
-
-" Configure error/warning section to use coc.nvim
-let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
-let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
-
-" Hide the Nerdtree status line to avoid clutter
-let g:NERDTreeStatusline = ''
+" Customize vim airline per filetype
+" 'nerdtree'  - Hide nerdtree status line
+" 'list'      - Only show file type plus current line number out of total
+let g:airline_filetype_overrides = {
+  \ 'nerdtree': [ get(g:, 'NERDTreeStatusline', ''), '' ],
+  \ 'list': [ '%y', '%l/%L'],
+  \ }
 
 " Disable vim-airline in preview mode
 let g:airline_exclude_preview = 1
@@ -245,21 +242,17 @@ let g:jsx_ext_required = 0
 let g:used_javascript_libs = 'underscore,requirejs,chai,jquery'
 
 " === Signify === "
-let g:signify_sign_delete = '-'
+" let g:signify_sign_delete = '-'
 
 " ============================================================================ "
 " ===                                UI                                    === "
 " ============================================================================ "
 
 " Enable true color support
-" Currently disabled because of this issue:
-" https://github.com/neovim/neovim/issues/2528
-" set termguicolors
+set termguicolors
 
-" Editor theme
-" set background=dark
+let g:nord_italic = 1
 colorscheme nord
-" Works with both enabled and disabled option.
 
 " Change vertical split character to be a space (essentially hide it)
 set fillchars+=vert:.
@@ -271,26 +264,38 @@ set splitbelow
 set noshowmode
 
 " Set floating window to be slightly transparent
-set winbl=0
+set winbl=15
+
+" ============================================================================ "
+" ===                      CUSTOM COLORSCHEME CHANGES                      === "
+" ============================================================================ "
+
+" Custom color changes when using italic font
+hi htmlArg gui=italic
+hi htmlArg cterm=italic
+hi Comment gui=italic
+hi Comment cterm=italic
+
+hi jsxAttrib gui=italic guifg=#81A1C1
+hi jsImport gui=italic guifg=#81A1C1
+hi jsExport gui=italic guifg=#81A1C1
+hi jsStorageClass gui=italic guifg=#81A1C1
+hi jsClassKeyword gui=italic guifg=#81A1C1
+hi jsExtendsKeyword gui=italic guifg=#81A1C1
+hi typescriptImport gui=italic guifg=#81A1C1
+hi typescriptExport gui=italic guifg=#81A1C1
+hi typescriptVariable gui=italic guifg=#81A1C1
+hi typescriptClassKeyword gui=italic guifg=#81A1C1
+hi typescriptClassExtends gui=italic guifg=#81A1C1
+hi cssClassName gui=italic guifg=#EBCB8B
+hi cssClassDot gui=italic guifg=#EBCB8B
+hi cssIdentifier gui=italic guifg=#EBCB8B
+hi scssImport gui=italic guifg=#81A1C1
 
 " coc.nvim color changes
-hi! link CocErrorSign WarningMsg
-hi! link CocWarningSign Number
-hi! link CocInfoSign Type
-
-" Try to hide vertical spit and end of buffer symbol
-" hi! VertSplit gui=NONE guifg=#17252c guibg=#17252c
-" hi! EndOfBuffer ctermbg=NONE ctermfg=NONE guibg=#17252c guifg=#17252c
-
-" Make background color transparent for git changes
-" hi! SignifySignAdd guibg=NONE
-" hi! SignifySignDelete guibg=NONE
-" hi! SignifySignChange guibg=NONE
-
-" Highlight git change signs
-"hi! SignifySignAdd guifg=#99c794
-"hi! SignifySignDelete guifg=#ec5f67
-"hi! SignifySignChange guifg=#c594c5
+hi! CocErrorSign ctermfg=red guifg=#BF616A
+hi! CocWarningSign ctermfg=red guifg=#D08770
+hi! CocInfoSign ctermfg=yellow guifg=#EBCB8B
 
 " Call method on window enter
 augroup WindowManagement
@@ -315,6 +320,7 @@ endfunction
 "   <leader>g - Search current directory for occurences of given term and close window if no results
 "   <leader>j - Search current directory for occurences of word under cursor
 nmap ; :Denite buffer<CR>
+nmap <leader>T :DeniteBufferDir file/rec<CR>
 nmap <leader>t :DeniteProjectDir file/rec<CR>
 nnoremap <leader>g :<C-u>Denite grep:. -no-empty<CR>
 nnoremap <leader>j :<C-u>DeniteCursorWord grep:.<CR>
@@ -392,7 +398,11 @@ nmap <C-l> <C-w>l
 " === coc.nvim === "
 nmap <silent> <leader>dd <Plug>(coc-definition)
 nmap <silent> <leader>dr <Plug>(coc-references)
-nmap <silent> <leader>dj <Plug>(coc-implementation)
+nmap <silent> <leader>di <Plug>(coc-implementation)
+nmap <silent> <leader>dt <Plug>(coc-type-definition)
+nmap <silent> <leader>dp <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>dn <Plug>(coc-diagnostic-next)
+nnoremap <silent> <leader>ds :<C-u>CocList -I -N --top symbols<CR>
 
 " Use K for show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>
@@ -408,6 +418,7 @@ endfunction
 " === vim-better-whitespace === "
 "   <leader>y - Automatically remove trailing whitespace
 nmap <leader>y :StripWhitespace<CR>
+highlight ExtraWhitespace ctermbg=red guibg=#D08770
 
 " === Search shorcuts === "
 "   <leader>h - Find and replace
@@ -415,16 +426,8 @@ nmap <leader>y :StripWhitespace<CR>
 map <leader>h :%s///<left><left>
 nmap <silent> <leader>/ :nohlsearch<CR>
 
-" === Easy-motion shortcuts ==="
-"   <leader>w - Easy-motion highlights first word letters bi-directionally
-map <leader>w <Plug>(easymotion-bd-w)
-
 " Allows you to save files you opened without write permissions via sudo
 cmap w!! w !sudo tee %
-
-" === vim-jsdoc shortcuts ==="
-" Generate jsdoc for function under cursor
-nmap <leader>z :JsDoc<CR>
 
 " Delete current visual selection and dump in black hole buffer before pasting
 " Used when you want to paste over something without it getting copied to
