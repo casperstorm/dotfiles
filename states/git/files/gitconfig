@@ -1,0 +1,7 @@
+[user]
+        name = Casper Storm
+        email = casper+github@rogildstorm.com
+        username = crs
+
+[core]
+        editor = nvim

@@ -1,0 +1,5 @@
+file_roots:
+  base:
+    - ./states
+
+file_client: local
