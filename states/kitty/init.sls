@@ -2,7 +2,7 @@ kitty-install:
   cmd.run:
     - names:
       - brew cask install kitty
-    - unless: brew cask list tmux
+    - unless: brew cask list kitty
 
 kitty-link:
   file.symlink:
