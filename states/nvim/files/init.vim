@@ -276,22 +276,6 @@ hi htmlArg cterm=italic
 hi Comment gui=italic
 hi Comment cterm=italic
 
-hi jsxAttrib gui=italic guifg=#81A1C1
-hi jsImport gui=italic guifg=#81A1C1
-hi jsExport gui=italic guifg=#81A1C1
-hi jsStorageClass gui=italic guifg=#81A1C1
-hi jsClassKeyword gui=italic guifg=#81A1C1
-hi jsExtendsKeyword gui=italic guifg=#81A1C1
-hi typescriptImport gui=italic guifg=#81A1C1
-hi typescriptExport gui=italic guifg=#81A1C1
-hi typescriptVariable gui=italic guifg=#81A1C1
-hi typescriptClassKeyword gui=italic guifg=#81A1C1
-hi typescriptClassExtends gui=italic guifg=#81A1C1
-hi cssClassName gui=italic guifg=#EBCB8B
-hi cssClassDot gui=italic guifg=#EBCB8B
-hi cssIdentifier gui=italic guifg=#EBCB8B
-hi scssImport gui=italic guifg=#81A1C1
-
 " coc.nvim color changes
 hi! CocErrorSign ctermfg=red guifg=#BF616A
 hi! CocWarningSign ctermfg=red guifg=#D08770

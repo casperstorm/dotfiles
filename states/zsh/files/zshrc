@@ -42,6 +42,7 @@ export NVIM_TUI_ENABLE_TRUE_COLOR=1
 alias l='ls -lAFh'    #long list,show almost all,show type,human readable
 alias ll='l'
 alias vim='nvim'
+alias gps='gh pr status'
 
 # Set default editor to nvim
 export EDITOR='nvim'

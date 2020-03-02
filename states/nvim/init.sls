@@ -15,3 +15,9 @@ plugins-link:
     - name: {{ grains.configdir }}/nvim/plugins.vim
     - target: {{ grains.statesdir}}/nvim/files/plugins.vim
     - force: True
+
+coc-settings-link:
+  file.symlink:
+    - name: {{ grains.configdir }}/nvim/coc-settings.json
+    - target: {{ grains.statesdir}}/nvim/files/coc-settings.json
+    - force: True
