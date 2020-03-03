@@ -5,3 +5,6 @@
 
 [core]
         editor = nvim
+
+[github]
+	user = casperstorm
