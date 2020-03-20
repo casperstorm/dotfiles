@@ -4,6 +4,11 @@ zsh-install:
       - brew install zsh
     - unless: brew list zsh
 
+oh-my-zsh-install:
+  git.cloned:
+    - name: https://github.com/ohmyzsh/ohmyzsh.git
+    - target: {{ grains.homedir }}/.oh-my-zsh
+
 zsh-completions-install:
   cmd.run:
     - names:

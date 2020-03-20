@@ -1,8 +1,6 @@
 # Dotfiles
 This is a collection of my dotfiles for various applications and packages.
 
-![screenshot](./resources/screenshot.png)
-
 ## Setup
 
 There are two main dependencies for running my dotfiles. [Homebrew](https://brew.sh/) and [SaltStack](https://www.saltstack.com/).
@@ -33,9 +31,9 @@ sudo chown -R user /etc/salt /var/cache/salt /var/log/salt /var/run/salt
 ```
 
 ## Running
-To run a specific state you can use the following. Replace `nvim` with the desired state.
+To run a specific state you can use the following. Replace `tmux` with the desired state.
 ```
-salt-call --config=./ --refresh-grains-cache state.sls nvim
+salt-call --config=./ --refresh-grains-cache state.sls tmux
 ```
 
 To get full state run
