@@ -28,3 +28,8 @@ gpg:
       - brew install gpg
     - unless: brew list gpg
 
+fd:
+  cmd.run:
+    - names:
+      - brew install fd
+    - unless: brew list fd

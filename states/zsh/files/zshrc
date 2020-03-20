@@ -43,6 +43,9 @@ alias l='ls -lAFh'    #long list,show almost all,show type,human readable
 alias ll='l'
 alias vim='nvim'
 alias gps='gh pr status'
+alias gpv='gh pr view'
+alias gis='gh issue status'
+alias giv='gh issue view'
 
 # Set default editor to nvim
 export EDITOR='nvim'

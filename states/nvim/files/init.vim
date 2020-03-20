@@ -43,6 +43,9 @@ set noruler
 " Only one line for command line
 set cmdheight=1
 
+" Mouse support (for when im really lazy)
+set mouse=a
+
 " === Completion Settings === "
 
 " Don't give completion messages like 'match 1 of 2'
