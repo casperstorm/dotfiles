@@ -64,10 +64,11 @@ Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'scrooloose/nerdtree'
 
 " Colorscheme
-Plug 'arcticicestudio/nord-vim'
+Plug 'lifepillar/vim-solarized8'
 
 " Customized vim status line
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " Common navigation of tmux and nvim windows
 Plug 'christoomey/vim-tmux-navigator'

@@ -12,6 +12,6 @@ kitty-link:
 
 theme-link:
   file.symlink:
-    - name: {{ grains.configdir }}/kitty/nord.conf
-    - target: {{ grains.statesdir}}/kitty/files/nord.conf
+    - name: {{ grains.configdir }}/kitty/theme.conf
+    - target: {{ grains.statesdir}}/kitty/files/theme.conf
     - force: True

@@ -9,7 +9,7 @@ source ~/.config/nvim/plugins.vim
 let g:mapleader=" "
 
 " Line numbers
-set number
+set relativenumber
 
 " Don't show last command
 set noshowcmd
@@ -253,9 +253,9 @@ let g:used_javascript_libs = 'underscore,requirejs,chai,jquery'
 
 " Enable true color support
 set termguicolors
-
-let g:nord_italic = 1
-colorscheme nord
+set background=light
+colorscheme solarized8
+let g:airline_solarized_bg='light'
 
 " Change vertical split character to be a space (essentially hide it)
 set fillchars+=vert:.
@@ -280,8 +280,8 @@ hi Comment gui=italic
 hi Comment cterm=italic
 
 " coc.nvim color changes
-hi! CocErrorSign ctermfg=red guifg=#BF616A
-hi! CocWarningSign ctermfg=red guifg=#D08770
+hi! CocErrorSign ctermfg=red guifg=#dc322f
+hi! CocWarningSign ctermfg=red guifg=#cb4b17
 hi! CocInfoSign ctermfg=yellow guifg=#EBCB8B
 
 " Call method on window enter
@@ -307,8 +307,8 @@ endfunction
 "   <leader>g - Search current directory for occurences of given term and close window if no results
 "   <leader>j - Search current directory for occurences of word under cursor
 nmap ; :Denite buffer<CR>
-nmap <leader>T :DeniteBufferDir file/rec<CR>
-nmap <leader>t :DeniteProjectDir file/rec<CR>
+nmap <leader>. :DeniteBufferDir file/rec<CR>
+nmap <leader><leader> :DeniteProjectDir file/rec<CR>
 nnoremap <leader>g :<C-u>Denite grep:. -no-empty<CR>
 nnoremap <leader>j :<C-u>DeniteCursorWord grep:.<CR>
 
