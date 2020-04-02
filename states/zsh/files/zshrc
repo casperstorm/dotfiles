@@ -46,6 +46,11 @@ alias gps='gh pr status'
 alias gpv='gh pr view'
 alias gis='gh issue status'
 alias giv='gh issue view'
+# Did
+export DID_FILE_PATH='~/Library/Mobile\ Documents/27N4MQEA55\~pro\~writer/Documents/did.txt'
+alias did="vim '+normal Go' ${DID_FILE_PATH}"
+alias new="echo '\n# `date +%d-%m-%Y`\n\n# todo\n# done\n# thoughts\n# notes' &>>${DID_FILE_PATH} && did"
+
 
 # Set default editor to nvim
 export EDITOR='nvim'
@@ -71,6 +76,7 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 
 # zsh autosuggestions
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#4d5966'
 
 # zsh highlightning
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

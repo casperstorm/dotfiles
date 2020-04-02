@@ -152,18 +152,6 @@ let g:coc_global_extensions = [
   \ 'coc-omnisharp',
   \ ]
 
-" === NeoSnippet === "
-" Map <C-k> as shortcut to activate snippet if available
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-
-" Load custom snippets from snippets folder
-let g:neosnippet#snippets_directory='~/.config/nvim/snippets'
-
-" Hide conceal markers
-let g:neosnippet#enable_conceal_markers = 0
-
 " === NERDTree === "
 " Show hidden files/directories
 let g:NERDTreeShowHidden = 1
@@ -244,18 +232,16 @@ let g:jsx_ext_required = 0
 " === javascript-libraries-syntax === "
 let g:used_javascript_libs = 'underscore,requirejs,chai,jquery'
 
-" === Signify === "
-" let g:signify_sign_delete = '-'
-
 " ============================================================================ "
 " ===                                UI                                    === "
 " ============================================================================ "
 
 " Enable true color support
 set termguicolors
-set background=light
-colorscheme solarized8
-let g:airline_solarized_bg='light'
+
+" Theme
+let ayucolor="mirage"
+colorscheme ayu
 
 " Change vertical split character to be a space (essentially hide it)
 set fillchars+=vert:.
@@ -281,8 +267,8 @@ hi Comment cterm=italic
 
 " coc.nvim color changes
 hi! CocErrorSign ctermfg=red guifg=#dc322f
-hi! CocWarningSign ctermfg=red guifg=#cb4b17
-hi! CocInfoSign ctermfg=yellow guifg=#EBCB8B
+hi! CocWarningSign ctermfg=red guifg=#f39e74
+hi! CocInfoSign ctermfg=yellow guifg=#ffe7b3
 
 " Call method on window enter
 augroup WindowManagement
@@ -383,13 +369,13 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
 " === coc.nvim === "
-nmap <silent> <leader>dd <Plug>(coc-definition)
-nmap <silent> <leader>dr <Plug>(coc-references)
-nmap <silent> <leader>di <Plug>(coc-implementation)
-nmap <silent> <leader>dt <Plug>(coc-type-definition)
-nmap <silent> <leader>dp <Plug>(coc-diagnostic-prev)
-nmap <silent> <leader>dn <Plug>(coc-diagnostic-next)
-nnoremap <silent> <leader>ds :<C-u>CocList -I -N --top symbols<CR>
+nmap <silent> <leader>cd <Plug>(coc-definition)
+nmap <silent> <leader>cr <Plug>(coc-references)
+nmap <silent> <leader>ci <Plug>(coc-implementation)
+nmap <silent> <leader>ct <Plug>(coc-type-definition)
+nmap <silent> <leader>cp <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>cn <Plug>(coc-diagnostic-next)
+nnoremap <silent> <leader>cs :<C-u>CocList -I -N --top symbols<CR>
 
 " Use K for show documentation in preview window
 nnoremap <silent> K :call <SID>show_documentation()<CR>

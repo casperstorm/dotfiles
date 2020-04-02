@@ -34,37 +34,21 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Denite - Fuzzy finding, buffer management
 Plug 'Shougo/denite.nvim'
 
-" Snippet support
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
-
 " Print function signatures in echo area
 Plug 'Shougo/echodoc.vim'
 
-Plug 'sheerun/vim-polyglot'
-
-" === Javascript Plugins === "
-" Typescript syntax highlighting
-" Plug 'HerringtonDarkholme/yats.vim'
-
-" ReactJS JSX syntax highlighting
-" Plug 'yuezk/vim-js'
-" Plug 'maxmellon/vim-jsx-pretty'
-
 " === Syntax Highlighting === "
+Plug 'sheerun/vim-polyglot'
 
 " Syntax highlighting for javascript libraries
 Plug 'othree/javascript-libraries-syntax.vim'
-
-" Improved syntax highlighting and indentation
-" Plug 'othree/yajs.vim'
 
 " === UI === "
 " File explorer
 Plug 'scrooloose/nerdtree'
 
 " Colorscheme
-Plug 'lifepillar/vim-solarized8'
+Plug 'ayu-theme/ayu-vim'
 
 " Customized vim status line
 Plug 'vim-airline/vim-airline'
