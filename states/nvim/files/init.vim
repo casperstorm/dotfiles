@@ -46,6 +46,10 @@ set cmdheight=1
 " Mouse support (for when im really lazy)
 set mouse=a
 
+set nocompatible
+filetype plugin on
+syntax on
+
 " === Completion Settings === "
 
 " Don't give completion messages like 'match 1 of 2'
@@ -232,6 +236,11 @@ let g:jsx_ext_required = 0
 " === javascript-libraries-syntax === "
 let g:used_javascript_libs = 'underscore,requirejs,chai,jquery'
 
+
+" === vim-wiki === "
+let g:vimwiki_list = [{'path': '~/Source/Private/zettelkasten',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
+
 " ============================================================================ "
 " ===                                UI                                    === "
 " ============================================================================ "
@@ -406,6 +415,10 @@ cmap w!! w !sudo tee %
 " Used when you want to paste over something without it getting copied to
 " Vim's default buffer
 vnoremap <leader>p "_dP
+
+
+" A Shortcut to help me create zettelkasten ids (dates)
+:iab <expr> dts strftime("%Y%d%m%H%M%S")
 
 " ============================================================================ "
 " ===                                 MISC.                                === "
