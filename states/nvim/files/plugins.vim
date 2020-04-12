@@ -57,5 +57,8 @@ Plug 'vim-airline/vim-airline-themes'
 " Common navigation of tmux and nvim windows
 Plug 'christoomey/vim-tmux-navigator'
 
+" === Wiki === "
+Plug 'vimwiki/vimwiki'
+
 " Initialize plugin system
 call plug#end()
