@@ -11,11 +11,10 @@ ZSH_THEME="spaceship"
 
 # spaceship promt
 SPACESHIP_PACKAGE_SHOW=false
-SPACESHIP_NODE_SHOW=false
 SPACESHIP_CHAR_SUFFIX=" "
 
 # Plugins
-plugins=(fzf git z colored-man-pages colorize pip python brew osx)
+plugins=(fzf git z colorize brew)
 source $ZSH/oh-my-zsh.sh
 
 # User
@@ -30,11 +29,6 @@ export ASDF_CONFIG_FILE="~/.config/asdf/.asdfrc"
 export TMUX_CONFIG="~/.config/tmux/.tmux.conf"
 alias tm="tmux -f $TMUX_CONFIG -u attach || tmux -f $TMUX_CONFIG -u new"
 
-# Weechat
-alias weechat="weechat -d ~/.config/weechat"
-
-# to get autosuggestion to work properly with color in tmux
-# export TERM=xterm-256color
 # Enabled true color support for terminals
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
@@ -46,11 +40,6 @@ alias gps='gh pr status'
 alias gpv='gh pr view'
 alias gis='gh issue status'
 alias giv='gh issue view'
-# Did
-export DID_FILE_PATH='~/Library/Mobile\ Documents/27N4MQEA55\~pro\~writer/Documents/did.txt'
-alias did="vim '+normal Go' ${DID_FILE_PATH}"
-alias new="echo '\n# `date +%d-%m-%Y`\n\n# todo\n# done\n# thoughts\n# notes' &>>${DID_FILE_PATH} && did"
-
 
 # Set default editor to nvim
 export EDITOR='nvim'
@@ -66,6 +55,13 @@ fcb() {
   branch=$(echo "$branches" |
            fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s#remotes/[^/]*/##")
+}
+
+# A zettelkasten command to quickly commit changes to git
+zkc() {
+  cd ~/Source/Private/zettelkasten
+  git commit -am "chore: updated zettelkasten"
+  cd -
 }
 
 # ZFZ Fuzzy search
