@@ -1,0 +1,8 @@
+alias tm="tmux -f $TMUX_CONFIG -u attach || tmux -f $TMUX_CONFIG -u new"
+alias l='ls -lAFh'
+alias ll='l'
+alias vim='nvim'
+alias gps='gh pr status'
+alias gpv='gh pr view'
+alias gis='gh issue status'
+alias giv='gh issue view'

@@ -22,6 +22,9 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 " === Editing Plugins === "
+" Case-preserving find and replace
+Plug 'tpope/vim-abolish'
+
 " Trailing whitespace highlighting & automatic fixing
 Plug 'ntpeters/vim-better-whitespace'
 
@@ -42,6 +45,12 @@ Plug 'sheerun/vim-polyglot'
 
 " Syntax highlighting for javascript libraries
 Plug 'othree/javascript-libraries-syntax.vim'
+
+" Hex colors
+Plug 'norcalli/nvim-colorizer.lua'
+
+" Indentguides
+Plug 'Yggdroot/indentLine'
 
 " === UI === "
 " File explorer

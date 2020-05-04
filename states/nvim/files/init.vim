@@ -9,7 +9,7 @@ source ~/.config/nvim/plugins.vim
 let g:mapleader=" "
 
 " Line numbers
-set relativenumber
+set number
 
 " Don't show last command
 set noshowcmd
@@ -153,7 +153,7 @@ let g:coc_global_extensions = [
   \ 'coc-eslint',
   \ 'coc-prettier',
   \ 'coc-json',
-  \ 'coc-omnisharp',
+  \ 'coc-rust-analyzer',
   \ ]
 
 " === NERDTree === "
@@ -241,6 +241,9 @@ let g:used_javascript_libs = 'underscore,requirejs,chai,jquery'
 let g:vimwiki_list = [{'path': '~/Source/Private/zettelkasten',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
 
+" === intent guides === "
+let g:indentLine_char_list = ['┆']
+
 " ============================================================================ "
 " ===                                UI                                    === "
 " ============================================================================ "
@@ -267,6 +270,12 @@ set winbl=15
 " ============================================================================ "
 " ===                      CUSTOM COLORSCHEME CHANGES                      === "
 " ============================================================================ "
+
+" === colorizer.lua ===
+" This is technically a plugin setup but requires termiguicolors to be set
+" before called
+lua require 'colorizer'.setup()
+
 
 " Custom color changes when using italic font
 hi htmlArg gui=italic

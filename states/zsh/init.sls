@@ -32,3 +32,15 @@ zsh-link:
     - name: {{ grains.homedir }}/.zshrc
     - target: {{ grains.statesdir}}/zsh/files/zshrc
     - force: True
+
+zsh-functions-link:
+  file.symlink:
+    - name: {{ grains.homedir }}/.zshfunctions
+    - target: {{ grains.statesdir}}/zsh/files/zshfunctions
+    - force: True
+
+zsh-alias-link:
+  file.symlink:
+    - name: {{ grains.homedir }}/.zshalias
+    - target: {{ grains.statesdir}}/zsh/files/zshalias
+    - force: True
