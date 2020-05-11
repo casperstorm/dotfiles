@@ -12,7 +12,7 @@ let g:mapleader=" "
 set number
 
 " Don't show last command
-set noshowcmd
+" set noshowcmd
 
 " Yank and paste with the system clipboard
 set clipboard=unnamed
@@ -244,6 +244,7 @@ let g:vimwiki_list = [{'path': '~/Source/Private/zettelkasten',
 " === intent guides === "
 let g:indentLine_char_list = ['┆']
 
+
 " ============================================================================ "
 " ===                                UI                                    === "
 " ============================================================================ "
@@ -254,6 +255,8 @@ set termguicolors
 " Theme
 let ayucolor="mirage"
 colorscheme ayu
+""colorscheme photon
+"colorscheme monotone
 
 " Change vertical split character to be a space (essentially hide it)
 set fillchars+=vert:.
@@ -287,6 +290,9 @@ hi Comment cterm=italic
 hi! CocErrorSign ctermfg=red guifg=#dc322f
 hi! CocWarningSign ctermfg=red guifg=#f39e74
 hi! CocInfoSign ctermfg=yellow guifg=#ffe7b3
+
+hi! Normal ctermbg=NONE guibg=NONE 
+hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
 
 " Call method on window enter
 augroup WindowManagement
