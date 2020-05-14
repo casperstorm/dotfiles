@@ -90,6 +90,10 @@ call denite#custom#var('grep', 'final_opts', [])
 " Remove date from buffer list
 call denite#custom#var('buffer', 'date_format', '')
 
+
+let s:denite_win = {}
+let s:denite_win.height = (&lines   * 45/100)
+
 " Custom options for Denite
 "   auto_resize             - Auto resize the Denite window height automatically.
 "   prompt                  - Customize denite prompt
@@ -111,8 +115,10 @@ let s:denite_options = {'default' : {
 \ 'highlight_window_background': 'Visual',
 \ 'highlight_filter_background': 'DiffAdd',
 \ 'winrow': 1,
-\ 'vertical_preview': 1,
+\ 'preview_height': s:denite_win.height,
 \ }}
+
+unlet s:denite_win
 
 " Loop through denite options and enable them
 function! s:profile(opts) abort
@@ -250,13 +256,12 @@ let g:indentLine_char_list = ['┆']
 " ============================================================================ "
 
 " Enable true color support
-set termguicolors
+if (has("termguicolors"))
+  set termguicolors
+endif
 
 " Theme
-let ayucolor="mirage"
-colorscheme ayu
-""colorscheme photon
-"colorscheme monotone
+colorscheme nord
 
 " Change vertical split character to be a space (essentially hide it)
 set fillchars+=vert:.
@@ -287,12 +292,12 @@ hi Comment gui=italic
 hi Comment cterm=italic
 
 " coc.nvim color changes
-hi! CocErrorSign ctermfg=red guifg=#dc322f
-hi! CocWarningSign ctermfg=red guifg=#f39e74
-hi! CocInfoSign ctermfg=yellow guifg=#ffe7b3
+hi! CocErrorSign ctermfg=red guifg=#BF616A
+hi! CocWarningSign ctermfg=red guifg=#D08770
+hi! CocInfoSign ctermfg=yellow guifg=#B48EAD
 
-hi! Normal ctermbg=NONE guibg=NONE 
-hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE 
+hi! Normal ctermbg=NONE guibg=NONE
+hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 
 " Call method on window enter
 augroup WindowManagement
@@ -319,14 +324,13 @@ endfunction
 nmap ; :Denite buffer<CR>
 nmap <leader>. :DeniteBufferDir file/rec<CR>
 nmap <leader><leader> :DeniteProjectDir file/rec<CR>
-nnoremap <leader>g :<C-u>Denite grep:. -no-empty<CR>
+nnoremap <silent> <leader>g :Denite -start-filter grep:::!<CR>
 nnoremap <leader>j :<C-u>DeniteCursorWord grep:.<CR>
 
 " Define mappings while in 'filter' mode
 "   <C-o>         - Switch to normal mode inside of search results
 "   <Esc>         - Exit denite window in any mode
 "   <CR>          - Open currently selected file in any mode
-"   <C-t>         - Open currently selected file in a new tab
 "   <C-v>         - Open currently selected file a vertical split
 "   <C-h>         - Open currently selected file in a horizontal split
 autocmd FileType denite-filter call s:denite_filter_my_settings()
@@ -339,8 +343,6 @@ function! s:denite_filter_my_settings() abort
   \ denite#do_map('quit')
   inoremap <silent><buffer><expr> <CR>
   \ denite#do_map('do_action')
-  inoremap <silent><buffer><expr> <C-t>
-  \ denite#do_map('do_action', 'tabopen')
   inoremap <silent><buffer><expr> <C-v>
   \ denite#do_map('do_action', 'vsplit')
   inoremap <silent><buffer><expr> <C-h>
@@ -372,8 +374,6 @@ function! s:denite_my_settings() abort
   \ denite#do_map('open_filter_buffer')
   nnoremap <silent><buffer><expr> <C-o>
   \ denite#do_map('open_filter_buffer')
-  nnoremap <silent><buffer><expr> <C-t>
-  \ denite#do_map('do_action', 'tabopen')
   nnoremap <silent><buffer><expr> <C-v>
   \ denite#do_map('do_action', 'vsplit')
   nnoremap <silent><buffer><expr> <C-h>

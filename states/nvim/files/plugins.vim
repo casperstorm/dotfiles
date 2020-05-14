@@ -32,7 +32,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'vimwiki/vimwiki'
-Plug 'Lokaltog/vim-monotone'
-Plug 'axvr/photon.vim'
+Plug 'arcticicestudio/nord-vim'
 
 call plug#end()
