@@ -23,15 +23,11 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Shougo/denite.nvim'
 Plug 'Shougo/echodoc.vim'
 Plug 'sheerun/vim-polyglot'
-Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'Yggdroot/indentLine'
 Plug 'scrooloose/nerdtree'
-Plug 'ayu-theme/ayu-vim'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'vimwiki/vimwiki'
 Plug 'arcticicestudio/nord-vim'
-
+Plug 'tpope/vim-fugitive'
 call plug#end()

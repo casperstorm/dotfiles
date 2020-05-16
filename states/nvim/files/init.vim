@@ -11,14 +11,14 @@ let g:mapleader=" "
 " Line numbers
 set number
 
-" Don't show last command
-" set noshowcmd
-
 " Yank and paste with the system clipboard
 set clipboard=unnamed
 
 " Hides buffers instead of closing them
 set hidden
+
+" Highlight current cursor line
+set cursorline
 
 " === TAB/Space settings === "
 " Insert spaces when TAB is pressed.
@@ -32,9 +32,6 @@ set shiftwidth=2
 
 " do not wrap long lines by default
 set nowrap
-
-" Don't highlight current cursor line
-set nocursorline
 
 " Disable line/column number in status line
 " Shows up in preview window when airline is disabled if not
@@ -152,8 +149,14 @@ autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 " Enable prettier
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
+let g:coc_explorer_global_presets = {
+\   'floating': {
+\      'position': 'floating',
+\   },
+\ }
+
 let g:coc_global_extensions = [
-  \ 'coc-snippets',
+  \ 'coc-explorer',
   \ 'coc-pairs',
   \ 'coc-tsserver',
   \ 'coc-eslint',
@@ -161,23 +164,6 @@ let g:coc_global_extensions = [
   \ 'coc-json',
   \ 'coc-rust-analyzer',
   \ ]
-
-" === NERDTree === "
-" Show hidden files/directories
-let g:NERDTreeShowHidden = 1
-
-" Remove bookmarks and help text from NERDTree
-let g:NERDTreeMinimalUI = 1
-
-" Custom icons for expandable/expanded directories
-let g:NERDTreeDirArrowExpandable = '⬏'
-let g:NERDTreeDirArrowCollapsible = '⬎'
-
-" Hide certain files and directories from NERDTree
-let g:NERDTreeIgnore = ['^\.DS_Store$', '^tags$', '\.git$[[dir]]', '\.idea$[[dir]]', '\.sass-cache$']
-
-" Wrap in try/catch to avoid errors on initial install before plugin is available
-try
 
 " === Vim airline ==== "
 " Enable extensions
@@ -223,29 +209,9 @@ endif
 " Don't show git changes to current file in airline
 let g:airline#extensions#hunks#enabled=0
 
-catch
-  echo 'Airline not installed. It should work after running :PlugInstall'
-endtry
-
 " === echodoc === "
 " Enable echodoc on startup
 let g:echodoc#enable_at_startup = 1
-
-" === vim-javascript === "
-" Enable syntax highlighting for JSDoc
-let g:javascript_plugin_jsdoc = 1
-
-" === vim-jsx === "
-" Highlight jsx syntax even in non .jsx files
-let g:jsx_ext_required = 0
-
-" === javascript-libraries-syntax === "
-let g:used_javascript_libs = 'underscore,requirejs,chai,jquery'
-
-
-" === vim-wiki === "
-let g:vimwiki_list = [{'path': '~/Source/Private/zettelkasten',
-                      \ 'syntax': 'markdown', 'ext': '.md'}]
 
 " === intent guides === "
 let g:indentLine_char_list = ['┆']
@@ -256,9 +222,7 @@ let g:indentLine_char_list = ['┆']
 " ============================================================================ "
 
 " Enable true color support
-if (has("termguicolors"))
-  set termguicolors
-endif
+set termguicolors
 
 " Theme
 colorscheme nord
@@ -296,9 +260,6 @@ hi! CocErrorSign ctermfg=red guifg=#BF616A
 hi! CocWarningSign ctermfg=red guifg=#D08770
 hi! CocInfoSign ctermfg=yellow guifg=#B48EAD
 
-hi! Normal ctermbg=NONE guibg=NONE
-hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
-
 " Call method on window enter
 augroup WindowManagement
   autocmd!
@@ -324,6 +285,7 @@ endfunction
 nmap ; :Denite buffer<CR>
 nmap <leader>. :DeniteBufferDir file/rec<CR>
 nmap <leader><leader> :DeniteProjectDir file/rec<CR>
+" nnoremap <leader>G :<C-u>Denite grep:. -no-empty<CR>
 nnoremap <silent> <leader>g :Denite -start-filter grep:::!<CR>
 nnoremap <leader>j :<C-u>DeniteCursorWord grep:.<CR>
 
@@ -380,11 +342,11 @@ function! s:denite_my_settings() abort
   \ denite#do_map('do_action', 'split')
 endfunction
 
-" === Nerdtree shorcuts === "
-"  <leader>n - Toggle NERDTree on/off
-"  <leader>f - Opens current file location in NERDTree
-nmap <leader>n :NERDTreeToggle<CR>
-nmap <leader>f :NERDTreeFind<CR>
+
+" === vim-fugitive ===
+nmap <leader>gh :diffget //3<CR>
+nmap <leader>gf :diffget //2<CR>
+nmap <leader>gs :G<CR>
 
 " Quick window switching
 nmap <C-h> <C-w>h
@@ -393,6 +355,8 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
 " === coc.nvim === "
+
+nmap <leader>n :CocCommand explorer --preset floating<CR>
 nmap <silent> <leader>cd <Plug>(coc-definition)
 nmap <silent> <leader>cr <Plug>(coc-references)
 nmap <silent> <leader>ci <Plug>(coc-implementation)
@@ -418,9 +382,9 @@ nmap <leader>y :StripWhitespace<CR>
 highlight ExtraWhitespace ctermbg=red guibg=#D08770
 
 " === Search shorcuts === "
-"   <leader>h - Find and replace
+"   <leader>h - Find and replace (Using vim-abolish capital S search by default )
 "   <leader>/ - Claer highlighted search terms while preserving history
-map <leader>h :%s///<left><left>
+map <leader>h :%S///<left><left>
 nmap <silent> <leader>/ :nohlsearch<CR>
 
 " Allows you to save files you opened without write permissions via sudo
@@ -431,16 +395,9 @@ cmap w!! w !sudo tee %
 " Vim's default buffer
 vnoremap <leader>p "_dP
 
-
-" A Shortcut to help me create zettelkasten ids (dates)
-:iab <expr> dts strftime("%Y%d%m%H%M%S")
-
 " ============================================================================ "
 " ===                                 MISC.                                === "
 " ============================================================================ "
-
-" Automaticaly close nvim if NERDTree is only thing left open
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " === Search === "
 " ignore case when searching
