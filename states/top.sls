@@ -7,3 +7,4 @@ base:
     - kitty
     - git
     - asdf
+    - alacritty
