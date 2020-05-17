@@ -30,4 +30,5 @@ Plug 'vim-airline/vim-airline'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'arcticicestudio/nord-vim'
 Plug 'tpope/vim-fugitive'
+
 call plug#end()
