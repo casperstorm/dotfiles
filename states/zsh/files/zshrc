@@ -5,8 +5,16 @@ export TMUX_CONFIG="$CONFIG/tmux/.tmux.conf"
 export ASDF_CONFIG_FILE="$CONFIG/asdf/.asdfrc"
 export FZF_DEFAULT_COMMAND='rg --files'
 
-source $HOME/.zshfunctions
-source $HOME/.zshalias
+case `uname` in
+  Darwin)
+    source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+    source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  ;;
+  Linux)
+    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+  ;;
+esac
 
 #export LANG="en_US.UTF-8"
 
@@ -35,13 +43,15 @@ source $ZSH/oh-my-zsh.sh
 # ZFZ Fuzzy search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+
 # zsh completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 # zsh autosuggestions
-source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#4d5966'
 
 # zsh highlightning
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters
+
+source $HOME/.zshfunctions
+source $HOME/.zshalias
