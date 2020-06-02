@@ -29,6 +29,7 @@ let g:coc_global_extensions = [
   \ 'coc-prettier',
   \ 'coc-json',
   \ 'coc-rust-analyzer',
+  \ 'coc-snippets',
   \ ]
 
 " Use K for show documentation in preview window
@@ -45,6 +46,19 @@ endfunction
 hi! CocErrorSign ctermfg=red guifg=#BF616A
 hi! CocWarningSign ctermfg=red guifg=#D08770
 hi! CocInfoSign ctermfg=yellow guifg=#B48EAD
+
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? coc#_select_confirm() :
+      \ coc#expandableOrJumpable() ? "\<C-r>=coc#rpc#request('doKeymap', ['snippets-expand-jump',''])\<CR>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+let g:coc_snippet_next = '<tab>'
 
 nmap <leader>n :CocCommand explorer --preset floating<CR>
 nmap <silent> <leader>cd <Plug>(coc-definition)

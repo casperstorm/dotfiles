@@ -42,11 +42,6 @@ set cmdheight=1
 " Mouse support (for when im really lazy)
 set mouse=a
 
-set nocompatible
-filetype plugin on
-syntax on
-
-
 " Don't give completion messages like 'match 1 of 2'
 " or 'The only match'
 set shortmess+=c
@@ -59,7 +54,7 @@ set shortmess+=c
 set termguicolors
 
 " Theme
-colorscheme nord
+colorscheme onedark
 
 " Change vertical split character to be a space (essentially hide it)
 set fillchars+=vert:.
@@ -77,13 +72,13 @@ set winbl=10
 " ===                           PLUGIN SETUP                               === "
 " ============================================================================ "
 
-source ~/.config/nvim/plugins/denite.vim
+" source ~/.config/nvim/plugins/denite.vim
+source ~/.config/nvim/plugins/fzf.vim
 source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/airline.vim
 source ~/.config/nvim/plugins/echodoc.vim
 source ~/.config/nvim/plugins/colorizer.vim
 source ~/.config/nvim/plugins/fugitive.vim
-source ~/.config/nvim/plugins/indentLine.vim
 source ~/.config/nvim/plugins/better-whitespace.vim
 
 " ============================================================================ "

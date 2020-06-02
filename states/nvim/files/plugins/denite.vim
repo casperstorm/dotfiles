@@ -78,7 +78,6 @@ endtry
 nmap ; :Denite buffer<CR>
 nmap <leader>. :DeniteBufferDir file/rec<CR>
 nmap <leader><leader> :DeniteProjectDir file/rec<CR>
-" nnoremap <leader>G :<C-u>Denite grep:. -no-empty<CR>
 nnoremap <silent> <leader>g :Denite -start-filter grep:::!<CR>
 nnoremap <leader>j :<C-u>DeniteCursorWord grep:.<CR>
 
