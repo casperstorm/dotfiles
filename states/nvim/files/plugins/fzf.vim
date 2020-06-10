@@ -16,7 +16,7 @@ map ; :Buffers<CR>
 nnoremap <leader>g :Rg<CR>
 nnoremap <silent> <Leader>j :Rg <C-R><C-W><CR>
 nnoremap <leader>m :Marks<CR>
-
+nnoremap <leader>/ :BLines<CR>
 
 let g:fzf_tags_command = 'ctags -R'
 " Border color

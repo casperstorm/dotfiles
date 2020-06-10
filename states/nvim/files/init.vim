@@ -50,11 +50,11 @@ set shortmess+=c
 " ===                                UI                                    === "
 " ============================================================================ "
 
-" Enable true color support
+" Enable true color `support
 set termguicolors
 
 " Theme
-colorscheme onedark
+colorscheme gruvbox
 
 " Change vertical split character to be a space (essentially hide it)
 set fillchars+=vert:.
@@ -92,9 +92,9 @@ hi Comment gui=italic
 hi Comment cterm=italic
 
 " coc.nvim color changes
-hi! CocErrorSign ctermfg=red guifg=#BF616A
-hi! CocWarningSign ctermfg=red guifg=#D08770
-hi! CocInfoSign ctermfg=yellow guifg=#B48EAD
+hi! CocErrorSign ctermfg=red guifg=#cc241d
+hi! CocWarningSign ctermfg=red guifg=#d79921
+hi! CocInfoSign ctermfg=yellow guifg=#b16286
 
 " Call method on window enter
 augroup WindowManagement
