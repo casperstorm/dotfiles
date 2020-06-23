@@ -4,6 +4,7 @@ export CONFIG=$HOME/.config
 export TMUX_CONFIG="$CONFIG/tmux/.tmux.conf"
 export ASDF_CONFIG_FILE="$CONFIG/asdf/.asdfrc"
 export FZF_DEFAULT_COMMAND='rg --files'
+export BAT_THEME="Nord"
 
 case `uname` in
   Darwin)

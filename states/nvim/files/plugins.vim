@@ -32,7 +32,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-Plug 'joshdick/onedark.vim'
 Plug 'SirVer/ultisnips'
 Plug 'gruvbox-community/gruvbox'
 

@@ -9,7 +9,7 @@ source ~/.config/nvim/plugins.vim
 let g:mapleader=" "
 
 " Line numbers
-set number
+set number! relativenumber!
 
 " Yank and paste with the system clipboard
 set clipboard=unnamed
@@ -54,7 +54,7 @@ set shortmess+=c
 set termguicolors
 
 " Theme
-colorscheme gruvbox
+colorscheme nord
 
 " Change vertical split character to be a space (essentially hide it)
 set fillchars+=vert:.
@@ -92,9 +92,9 @@ hi Comment gui=italic
 hi Comment cterm=italic
 
 " coc.nvim color changes
-hi! CocErrorSign ctermfg=red guifg=#cc241d
-hi! CocWarningSign ctermfg=red guifg=#d79921
-hi! CocInfoSign ctermfg=yellow guifg=#b16286
+hi! CocErrorSign ctermfg=red guifg=#bf616a
+hi! CocWarningSign ctermfg=red guifg=#d08770
+hi! CocInfoSign ctermfg=yellow guifg=#b48dad
 
 " Call method on window enter
 augroup WindowManagement

@@ -50,12 +50,11 @@ endsnippet
 #
 
 snippet rfc "function component exported" b
-import React from 'react';
+import React from 'react'
 
-const ${1:`!v expand('%:t:r')`} = props => {
-	return null;$0
-};
+export const ${1:`!v expand('%:t:r')`} = () => {
+	return null$0
+}
 
-export default $1;
 endsnippet
 
