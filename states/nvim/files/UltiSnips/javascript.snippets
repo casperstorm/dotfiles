@@ -8,7 +8,7 @@ def lowerdash(t):
 endglobal
 
 snippet cl "console.log"
-console.log(${0});
+console.log('${0}')
 endsnippet
 
 snippet clv "console.log variable"
@@ -21,28 +21,28 @@ endsnippet
 #
 
 snippet useS "useState()" b
-const [$1, set$3`!p snip.rv=upperfirst(t[1])`] = useState($2);
+const [$1, set$3`!p snip.rv=upperfirst(t[1])`] = useState($2)
 endsnippet
 
 snippet useE "useEffect()" b
 useEffect(() => {
   $1$0
   return () => {}
-}, [$2]);
+}, [$2])
 endsnippet
 
 snippet useC "useContext()" b
-const ${1:context} = useContext($2);
+const ${1:context} = useContext($2)
 endsnippet
 
 snippet useCB "useCallback(fn, inputs)" b
 const ${1:callback} = useCallback(($2) => ${3:{
 	$4
-}}, [$5]);
+}}, [$5])
 endsnippet
 
 snippet useR "useRef(defaultValue)" b
-const ${1:ref} = useRef(${2:null});
+const ${1:ref} = useRef(${2:null})
 endsnippet
 
 # ==========================================
@@ -56,5 +56,35 @@ export const ${1:`!v expand('%:t:r')`} = () => {
 	return null$0
 }
 
+endsnippet
+
+snippet cR "mapStateToProps and mapDispatchToProps" b
+const mapStateToProps = (state) => ({
+$0
+})
+
+const mapDispatchToProps = {}
+
+export default connect(mapStateToProps, mapDispatchToProps)(${1:`!v expand('%:t:r')`})
+endsnippet
+
+
+# ==========================================
+# Common
+#
+
+snippet tryC "try catch" b
+try {
+$0
+} catch (error) {
+  console.log('error', error)
+}
+
+endsnippet
+
+snippet com "Comment" b
+/*
+ * $0
+ */
 endsnippet
 

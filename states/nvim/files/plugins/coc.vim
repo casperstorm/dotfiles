@@ -61,10 +61,12 @@ endfunction
 let g:coc_snippet_next = '<tab>'
 
 nmap <leader>n :CocCommand explorer --preset floating<CR>
-nmap <silent> <leader>cd <Plug>(coc-definition)
-nmap <silent> <leader>cr <Plug>(coc-references)
-nmap <silent> <leader>ci <Plug>(coc-implementation)
-nmap <silent> <leader>ct <Plug>(coc-type-definition)
-nmap <silent> <leader>cp <Plug>(coc-diagnostic-prev)
-nmap <silent> <leader>cn <Plug>(coc-diagnostic-next)
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
+nmap <leader>gi <Plug>(coc-implementation)
+nmap <leader>gy <Plug>(coc-type-definition)
+nmap <silent> <leader>g[ <Plug>(coc-diagnostic-prev)
+nmap <silent> <leader>g] <Plug>(coc-diagnostic-next)
+nmap <leader>gf <Plug>(coc-fix-current)
+nmap <leader>sr <Plug>(coc-rename)
 nnoremap <silent> <leader>cs :<C-u>CocList -I -N --top symbols<CR>
