@@ -78,8 +78,8 @@ source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/airline.vim
 source ~/.config/nvim/plugins/echodoc.vim
 source ~/.config/nvim/plugins/colorizer.vim
-" source ~/.config/nvim/plugins/fugitive.vim
 source ~/.config/nvim/plugins/better-whitespace.vim
+source ~/.config/nvim/plugins/ultisnips.vim
 
 " ============================================================================ "
 " ===                      CUSTOM COLORSCHEME CHANGES                      === "
