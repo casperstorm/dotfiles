@@ -5,6 +5,7 @@ source ~/.config/nvim/plugins.vim
 " ===                           EDITING OPTIONS                            === "
 " ============================================================================ "
 
+
 " Remap leader key to ,
 let g:mapleader=" "
 
@@ -55,7 +56,11 @@ set termguicolors
 
 " Theme
 colorscheme nord
+" colorscheme meh
+" colorscheme gruvbox
 
+hi StatusLine ctermbg=24 ctermfg=254 guibg=#404044 guifg=#222226
+hi StatusLineNC ctermbg=252 ctermfg=238 guibg=#222226 guifg=#404044
 " Change vertical split character to be a space (essentially hide it)
 set fillchars+=vert:.
 
@@ -73,13 +78,16 @@ set winbl=10
 " ============================================================================ "
 
 " source ~/.config/nvim/plugins/denite.vim
+source ~/.config/nvim/plugins/airline.vim
 source ~/.config/nvim/plugins/fzf.vim
 source ~/.config/nvim/plugins/coc.vim
-source ~/.config/nvim/plugins/airline.vim
 source ~/.config/nvim/plugins/echodoc.vim
 source ~/.config/nvim/plugins/colorizer.vim
 source ~/.config/nvim/plugins/better-whitespace.vim
 source ~/.config/nvim/plugins/ultisnips.vim
+
+" Rust.vim
+let g:rustfmt_autosave = 1
 
 " ============================================================================ "
 " ===                      CUSTOM COLORSCHEME CHANGES                      === "

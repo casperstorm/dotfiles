@@ -13,16 +13,15 @@ let g:fzf_history_dir = '~/.local/share/fzf-history'
 map <leader><leader> :Files<CR>
 nnoremap <silent> <Leader>. :GFiles <C-R>=expand('%:h')<CR><CR>
 map ; :Buffers<CR>
-nnoremap <leader>g :Rg<CR>
+nnoremap <leader>f :Rg<CR>
 nnoremap <silent> <Leader>j :Rg <C-R><C-W><CR>
 nnoremap <leader>m :Marks<CR>
 nnoremap <leader>/ :BLines<CR>
 
 let g:fzf_tags_command = 'ctags -R'
 " Border color
-let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'highlight': 'Todo', 'border': 'sharp' } }
-
-let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline'
+let g:fzf_layout = { 'window': { 'width': 0.9, 'height': 0.9 } }
+let $FZF_DEFAULT_OPTS = '--layout=reverse --info=inline --margin=1'
 let $FZF_DEFAULT_COMMAND="rg --files --hidden --no-ignore-vcs -g '!{node_modules,.git}'"
 
 
@@ -50,7 +49,7 @@ command! -bang -nargs=? -complete=dir Files
 " Get text in files with Rg
 command! -bang -nargs=* Rg
   \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --color=always --smart-case '.shellescape(<q-args>), 1,
+  \   'rg --column --line-number --no-heading --color=always --colors "path:fg:127,171,189" --colors "line:fg:170,170,170" --colors "match:fg:119,170,136" --smart-case '.shellescape(<q-args>), 1,
   \   fzf#vim#with_preview(), <bang>0)
 
 " Ripgrep advanced

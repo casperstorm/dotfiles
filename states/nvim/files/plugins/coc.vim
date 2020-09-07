@@ -30,6 +30,7 @@ let g:coc_global_extensions = [
   \ 'coc-json',
   \ 'coc-rust-analyzer',
   \ 'coc-snippets',
+  \ 'coc-styled-components',
   \ ]
 
 " Use K for show documentation in preview window
@@ -70,3 +71,4 @@ nmap <silent> <leader>g] <Plug>(coc-diagnostic-next)
 nmap <leader>gf <Plug>(coc-fix-current)
 nmap <leader>sr <Plug>(coc-rename)
 nnoremap <silent> <leader>cs :<C-u>CocList -I -N --top symbols<CR>
+

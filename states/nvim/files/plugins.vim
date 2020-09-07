@@ -20,7 +20,6 @@ Plug 'tpope/vim-abolish'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'machakann/vim-sandwich'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
-Plug 'Shougo/denite.nvim'
 Plug 'Shougo/echodoc.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'norcalli/nvim-colorizer.lua'
@@ -33,6 +32,9 @@ Plug 'tpope/vim-sensible'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 Plug 'SirVer/ultisnips'
+Plug 'davidosomething/vim-colors-meh'
+Plug 'pgdouyon/vim-yin-yang'
+Plug 'Shougo/denite.nvim'
 Plug 'gruvbox-community/gruvbox'
 
 call plug#end()

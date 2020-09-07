@@ -4,18 +4,10 @@ export CONFIG=$HOME/.config
 export TMUX_CONFIG="$CONFIG/tmux/.tmux.conf"
 export ASDF_CONFIG_FILE="$CONFIG/asdf/.asdfrc"
 export FZF_DEFAULT_COMMAND='rg --files'
-export BAT_THEME="Nord"
+export COLORTERM="truecolor"
 
-case `uname` in
-  Darwin)
-    source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-    source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  ;;
-  Linux)
-    source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
-    source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-  ;;
-esac
+source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #export LANG="en_US.UTF-8"
 

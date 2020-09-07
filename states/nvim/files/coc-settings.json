@@ -21,5 +21,6 @@
   "diagnostic.errorSign": "•",
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
-  "suggest.noselect": false
+  "suggest.noselect": false,
+  "javascript.validate.enable": false
 }
