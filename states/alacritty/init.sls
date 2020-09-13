@@ -9,4 +9,5 @@ alacritty-link:
     - name: {{ grains.configdir }}/alacritty/alacritty.yml
     - target: {{ grains.statesdir}}/alacritty/files/alacritty.yml
     - force: True
+    - makedirs: True
 
