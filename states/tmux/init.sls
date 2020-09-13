@@ -9,3 +9,4 @@ tmux-link:
     - name: {{ grains.configdir }}/tmux/.tmux.conf
     - target: {{ grains.statesdir}}/tmux/files/tmux.conf
     - force: True
+    - makedirs: True
