@@ -9,6 +9,7 @@ kitty-link:
     - name: {{ grains.configdir }}/kitty/kitty.conf
     - target: {{ grains.statesdir}}/kitty/files/kitty.conf
     - force: True
+    - makedirs: True
 
 nord-link:
   file.symlink:

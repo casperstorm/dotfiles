@@ -10,3 +10,4 @@ alacritty-folders:
     - name: {{ grains.configdir }}/alacritty
     - target: {{ grains.statesdir}}/alacritty/files
     - force: True
+    - makedirs: True

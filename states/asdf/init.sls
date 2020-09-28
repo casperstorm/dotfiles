@@ -16,17 +16,18 @@ asdf-nodejs:
   cmd.run:
     - names:
       - asdf plugin-add nodejs
-      - asdf install yarn $(asdf latest nodejs)
-      - asdf global yarn $(asdf latest nodejs)
+      - bash -c '${ASDF_DATA_DIR:=$HOME/.asdf}/plugins/nodejs/bin/import-release-team-keyring'
+      - asdf install nodejs $(asdf latest nodejs)
+      - asdf global nodejs $(asdf latest nodejs)
     - unless:
-      - asdf which nodejs
+      - asdf which node
 
 asdf-ruby:
   cmd.run:
     - names:
       - asdf plugin-add ruby
-      - asdf install yarn $(asdf latest ruby)
-      - asdf global yarn $(asdf latest ruby)
+      - asdf install ruby $(asdf latest ruby)
+      - asdf global ruby $(asdf latest ruby)
     - unless:
       - asdf which ruby
 
@@ -35,3 +36,4 @@ asdf-link:
     - name: {{ grains.configdir }}/asdf/asdfrc
     - target: {{ grains.statesdir}}/asdf/files/asdfrc
     - force: True
+    - makedirs: True
