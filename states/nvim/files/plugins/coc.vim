@@ -12,6 +12,12 @@ inoremap <silent><expr> <TAB>
 " Close preview window when completion is done.
 autocmd! CompleteDone * if pumvisible() == 0 | pclose | endif
 
+" Statusline
+let g:coc_status_error_sign = "e"
+let g:coc_status_warning_sign = "w"
+
+set statusline+=\ %{coc#status()}
+
 " Enable prettier
 command! -nargs=0 Prettier :call CocAction('runCommand', 'prettier.formatFile')
 
@@ -31,6 +37,7 @@ let g:coc_global_extensions = [
   \ 'coc-rust-analyzer',
   \ 'coc-snippets',
   \ 'coc-styled-components',
+  \ 'coc-emmet',
   \ ]
 
 " Use K for show documentation in preview window

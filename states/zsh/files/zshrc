@@ -36,12 +36,11 @@ source $ZSH/oh-my-zsh.sh
 # ZFZ Fuzzy search
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-
 # zsh completions
 fpath=(/usr/local/share/zsh-completions $fpath)
 
 # zsh autosuggestions
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#4d5966'
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=241'
 
 # zsh highlightning
 export ZSH_HIGHLIGHT_HIGHLIGHTERS_DIR=/usr/local/share/zsh-syntax-highlighting/highlighters

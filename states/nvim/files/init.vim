@@ -48,6 +48,33 @@ set mouse=a
 set shortmess+=c
 
 " ============================================================================ "
+" ===                                STATUSBAR                             === "
+" ============================================================================ "
+
+
+function! GitBranch()
+  return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+endfunction
+
+function! StatuslineGit()
+  let l:branchname = GitBranch()
+  return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+endfunction
+
+set statusline=
+set statusline+=%#PmenuSel#
+set statusline+=%{StatuslineGit()}
+set statusline+=%#LineNr#
+set statusline+=\ %f
+set statusline+=%m\
+set statusline+=%=
+set statusline+=%#CursorColumn#
+set statusline+=\ %y
+set statusline+=%{&fileformat}
+set statusline+=\ %p%%
+
+
+" ============================================================================ "
 " ===                                UI                                    === "
 " ============================================================================ "
 
@@ -55,12 +82,8 @@ set shortmess+=c
 set termguicolors
 
 " Theme
-colorscheme nord
-" colorscheme meh
-" colorscheme gruvbox
+colorscheme sort
 
-hi StatusLine ctermbg=24 ctermfg=254 guibg=#404044 guifg=#222226
-hi StatusLineNC ctermbg=252 ctermfg=238 guibg=#222226 guifg=#404044
 " Change vertical split character to be a space (essentially hide it)
 set fillchars+=vert:.
 
@@ -77,45 +100,16 @@ set winbl=10
 " ===                           PLUGIN SETUP                               === "
 " ============================================================================ "
 
-" source ~/.config/nvim/plugins/denite.vim
-source ~/.config/nvim/plugins/airline.vim
 source ~/.config/nvim/plugins/fzf.vim
 source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/echodoc.vim
 source ~/.config/nvim/plugins/colorizer.vim
 source ~/.config/nvim/plugins/better-whitespace.vim
 source ~/.config/nvim/plugins/ultisnips.vim
+source ~/.config/nvim/plugins/sneak.vim
 
 " Rust.vim
 let g:rustfmt_autosave = 1
-
-" ============================================================================ "
-" ===                      CUSTOM COLORSCHEME CHANGES                      === "
-" ============================================================================ "
-
-" Custom color changes when using italic font
-hi htmlArg gui=italic
-hi htmlArg cterm=italic
-hi Comment gui=italic
-hi Comment cterm=italic
-
-" coc.nvim color changes
-hi! CocErrorSign ctermfg=red guifg=#bf616a
-hi! CocWarningSign ctermfg=red guifg=#d08770
-hi! CocInfoSign ctermfg=yellow guifg=#b48dad
-
-" Call method on window enter
-augroup WindowManagement
-  autocmd!
-  autocmd WinEnter * call Handle_Win_Enter()
-augroup END
-
-" Change highlight group of preview window when open
-function! Handle_Win_Enter()
-  if &previewwindow
-    setlocal winhighlight=Normal:MarkdownError
-  endif
-endfunction
 
 " ============================================================================ "
 " ===                             KEY MAPPINGS                             === "
@@ -128,7 +122,7 @@ nmap <C-k> <C-w>k
 nmap <C-l> <C-w>l
 
 " Search
-map <leader>h :%S///<left><left>
+map <leader>h :%s///<left><left>
 nmap <silent> <leader>/ :nohlsearch<CR>
 
 

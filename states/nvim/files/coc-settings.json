@@ -22,5 +22,7 @@
   "diagnostic.warningSign": "•",
   "diagnostic.infoSign": "•",
   "suggest.noselect": false,
-  "javascript.validate.enable": false
+  "javascript.validate.enable": false,
+  "rust-analyzer.diagnostics.enable": true,
+  "rust-analyzer.inlayHints.chainingHints": true
 }
