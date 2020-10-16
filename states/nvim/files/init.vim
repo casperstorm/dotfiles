@@ -1,6 +1,8 @@
 scriptencoding utf-8
 source ~/.config/nvim/plugins.vim
 
+let g:neovide_refresh_rate=140
+
 " ============================================================================ "
 " ===                           EDITING OPTIONS                            === "
 " ============================================================================ "
@@ -81,6 +83,11 @@ set statusline+=\ %p%%
 " Enable true color `support
 set termguicolors
 
+" miramare
+" the configuration options should be placed before `colorscheme miramare`
+let g:miramare_enable_italic = 1
+let g:miramare_disable_italic_comment = 1
+
 " Theme
 colorscheme sort
 
@@ -101,12 +108,13 @@ set winbl=10
 " ============================================================================ "
 
 source ~/.config/nvim/plugins/fzf.vim
-source ~/.config/nvim/plugins/coc.vim
-source ~/.config/nvim/plugins/echodoc.vim
+" source ~/.config/nvim/plugins/coc.vim
+" source ~/.config/nvim/plugins/echodoc.vim
 source ~/.config/nvim/plugins/colorizer.vim
 source ~/.config/nvim/plugins/better-whitespace.vim
 source ~/.config/nvim/plugins/ultisnips.vim
-source ~/.config/nvim/plugins/sneak.vim
+source ~/.config/nvim/plugins/lsp.vim
+source ~/.config/nvim/plugins/completion.vim
 
 " Rust.vim
 let g:rustfmt_autosave = 1
