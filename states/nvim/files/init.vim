@@ -1,8 +1,6 @@
 scriptencoding utf-8
 source ~/.config/nvim/plugins.vim
 
-let g:neovide_refresh_rate=140
-
 " ============================================================================ "
 " ===                           EDITING OPTIONS                            === "
 " ============================================================================ "
@@ -40,7 +38,7 @@ set nowrap
 set noruler
 
 " Only one line for command line
-set cmdheight=1
+set cmdheight=2
 
 " Mouse support (for when im really lazy)
 set mouse=a
@@ -48,6 +46,9 @@ set mouse=a
 " Don't give completion messages like 'match 1 of 2'
 " or 'The only match'
 set shortmess+=c
+
+" Updatetime
+set updatetime=300
 
 " ============================================================================ "
 " ===                                STATUSBAR                             === "
@@ -83,22 +84,8 @@ set statusline+=\ %p%%
 " Enable true color `support
 set termguicolors
 
-" miramare
-" the configuration options should be placed before `colorscheme miramare`
-let g:miramare_enable_italic = 1
-let g:miramare_disable_italic_comment = 1
-
 " Theme
-colorscheme sort
-
-" Change vertical split character to be a space (essentially hide it)
-set fillchars+=vert:.
-
-" Set preview window to appear at bottom
-set splitbelow
-
-" Don't dispay mode in command line (airilne already shows it)
-set noshowmode
+colorscheme base16-gruvbox-dark-hard
 
 " Set floating window to be slightly transparent
 set winbl=10
@@ -109,15 +96,40 @@ set winbl=10
 
 source ~/.config/nvim/plugins/fzf.vim
 " source ~/.config/nvim/plugins/coc.vim
-" source ~/.config/nvim/plugins/echodoc.vim
 source ~/.config/nvim/plugins/colorizer.vim
 source ~/.config/nvim/plugins/better-whitespace.vim
-source ~/.config/nvim/plugins/ultisnips.vim
+" source ~/.config/nvim/plugins/ultisnips.vim
+
+" LSP
 source ~/.config/nvim/plugins/lsp.vim
 source ~/.config/nvim/plugins/completion.vim
 
+" luafile ~/.config/nvim/lua/treesitter.lua
+" luafile ~/.config/nvim/lua/colorizer.lua
+
 " Rust.vim
 let g:rustfmt_autosave = 1
+" let g:rust_fold = 1
+
+" colorizer
+
+" Neoformat
+" au BufWritePre *.js,*.ts,*.scss,*.jsx,*.tsx Neoformat
+
+" Disable ale
+" let g:ale_disable_lsp = 1
+" let g:ale_fix_on_save = 1
+" let g:ale_fixers = {}
+" let g:ale_fixers['javascript'] = ['eslint', 'prettier']
+" let g:ale_fixers['javascriptreact'] = ['eslint', 'prettier']
+" let g:ale_fixers['typescript'] = ['eslint', 'prettier']
+" let g:ale_fixers['typescriptreact'] = ['eslint', 'prettier']
+" let g:ale_fixers['rust'] = ['rustfmt']
+" let b:ale_rust_rustfmt_options = '--edition 2018'
+
+" map <leader>g] :ALENextWrap<cr>
+" map <leader>g[ :ALEPreviousWrap<cr>
+" map <leader>f :ALEFix<cr>
 
 " ============================================================================ "
 " ===                             KEY MAPPINGS                             === "
@@ -149,9 +161,6 @@ set ignorecase
 " if the search string has an upper case letter in it, the search will be case sensitive
 set smartcase
 
-" Automatically re-read file if a change was detected outside of vim
-set autoread
-
 " Set backups
 if has('persistent_undo')
   set undofile
@@ -161,8 +170,3 @@ endif
 set backupdir=~/.config/nvim/backups " Don't put backups in current dir
 set backup
 set noswapfile
-
-" Reload icons after init source
-if exists('g:loaded_webdevicons')
-  call webdevicons#refresh()
-endif
