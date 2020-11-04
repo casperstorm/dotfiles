@@ -95,14 +95,14 @@ set winbl=10
 " ============================================================================ "
 
 source ~/.config/nvim/plugins/fzf.vim
-" source ~/.config/nvim/plugins/coc.vim
+source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/colorizer.vim
 source ~/.config/nvim/plugins/better-whitespace.vim
 " source ~/.config/nvim/plugins/ultisnips.vim
 
 " LSP
-source ~/.config/nvim/plugins/lsp.vim
-source ~/.config/nvim/plugins/completion.vim
+" source ~/.config/nvim/plugins/lsp.vim
+" source ~/.config/nvim/plugins/completion.vim
 
 " luafile ~/.config/nvim/lua/treesitter.lua
 " luafile ~/.config/nvim/lua/colorizer.lua

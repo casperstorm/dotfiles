@@ -35,7 +35,7 @@ Plug 'junegunn/fzf.vim'
 " Plug 'romgrk/nvim-treesitter-context'
 
 " " Coc
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Themes
 " Plug 'casperstorm/sort-hvid.vim'
@@ -47,16 +47,16 @@ Plug 'chriskempson/base16-vim'
 " Plug 'sbdchd/neoformat'
 
 " Configure LSP
-Plug 'neovim/nvim-lspconfig'
+" Plug 'neovim/nvim-lspconfig'
 
 " LSP Diagnostics
 " Plug 'nvim-lua/diagnostic-nvim'
 
 " Completion source for buffers
-Plug 'steelsojka/completion-buffers'
+" Plug 'steelsojka/completion-buffers'
 
 " LSP/Treesitter completion
-Plug 'nvim-lua/completion-nvim'
+" Plug 'nvim-lua/completion-nvim'
 
 " Linting
 " Plug 'dense-analysis/ale'
