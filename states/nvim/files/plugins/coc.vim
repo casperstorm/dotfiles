@@ -35,9 +35,6 @@ let g:coc_global_extensions = [
   \ 'coc-prettier',
   \ 'coc-json',
   \ 'coc-rust-analyzer',
-  \ 'coc-snippets',
-  \ 'coc-styled-components',
-  \ 'coc-emmet',
   \ ]
 
 " Use K for show documentation in preview window

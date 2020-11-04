@@ -17,9 +17,7 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'ntpeters/vim-better-whitespace'
-Plug 'machakann/vim-sandwich'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-" Plug 'Shougo/echodoc.vim'
+" Plug 'machakann/vim-sandwich'
 Plug 'sheerun/vim-polyglot'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'christoomey/vim-tmux-navigator'
@@ -27,31 +25,41 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-sensible'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
-" Plug 'SirVer/ultisnips'
-" Plug 'mattn/emmet-vim'
+
+
+" Treesitter
+" Plug 'nvim-treesitter/nvim-treesitter'
+" Plug 'nvim-treesitter/nvim-treesitter-refactor'
+" Plug 'nvim-treesitter/nvim-treesitter-textobjects'
+" Plug 'nvim-treesitter/playground'
+" Plug 'romgrk/nvim-treesitter-context'
+
+" " Coc
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Themes
-Plug 'chriskempson/base16-vim'
-" Plug 'arcticicestudio/nord-vim'
-" Plug 'sainnhe/gruvbox-material'
 " Plug 'casperstorm/sort-hvid.vim'
-" Plug 'lokaltog/vim-monotone'
-" Plug 'jaredgorski/fogbell.vim'
-" Plug 'huyvohcmc/atlas.vim'
-" Plug 'owickstrom/vim-colors-paramount'
-" Plug 'robertmeta/nofrils'
 " Plug '/Users/crs/Source/Private/sort-hvid.vim'
-" Plug 'franbach/miramare'
-" Plug 'wadackel/vim-dogrun'
-" Plug 'alessandroyorba/sierra'
+Plug 'chriskempson/base16-vim'
+" Plug 'romainl/Apprentice'
 
-" LSP
+" Formatters
+" Plug 'sbdchd/neoformat'
+
+" Configure LSP
 " Plug 'neovim/nvim-lspconfig'
+
+" LSP Diagnostics
 " Plug 'nvim-lua/diagnostic-nvim'
 
-" Completion
+" Completion source for buffers
 " Plug 'steelsojka/completion-buffers'
+
+" LSP/Treesitter completion
 " Plug 'nvim-lua/completion-nvim'
+
+" Linting
+" Plug 'dense-analysis/ale'
 
 call plug#end()
 
