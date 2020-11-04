@@ -89,7 +89,7 @@ let g:miramare_enable_italic = 1
 let g:miramare_disable_italic_comment = 1
 
 " Theme
-colorscheme sort
+colorscheme base16-gruvbox-dark-hard
 
 " Change vertical split character to be a space (essentially hide it)
 set fillchars+=vert:.
@@ -108,13 +108,13 @@ set winbl=10
 " ============================================================================ "
 
 source ~/.config/nvim/plugins/fzf.vim
-" source ~/.config/nvim/plugins/coc.vim
+source ~/.config/nvim/plugins/coc.vim
 " source ~/.config/nvim/plugins/echodoc.vim
 source ~/.config/nvim/plugins/colorizer.vim
 source ~/.config/nvim/plugins/better-whitespace.vim
 source ~/.config/nvim/plugins/ultisnips.vim
-source ~/.config/nvim/plugins/lsp.vim
-source ~/.config/nvim/plugins/completion.vim
+" source ~/.config/nvim/plugins/lsp.vim
+" source ~/.config/nvim/plugins/completion.vim
 
 " Rust.vim
 let g:rustfmt_autosave = 1

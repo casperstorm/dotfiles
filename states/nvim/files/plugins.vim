@@ -16,43 +16,42 @@ endif
 
 call plug#begin('~/.config/nvim/plugged')
 
-" Plug 'tpope/vim-abolish'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'machakann/vim-sandwich'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plug 'Shougo/echodoc.vim'
 Plug 'sheerun/vim-polyglot'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-commentary'
-" Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-sensible'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 " Plug 'SirVer/ultisnips'
 " Plug 'mattn/emmet-vim'
-" Plug 'junegunn/vim-peekaboo'
 
 " Themes
-Plug 'arcticicestudio/nord-vim'
-Plug 'sainnhe/gruvbox-material'
+Plug 'chriskempson/base16-vim'
+" Plug 'arcticicestudio/nord-vim'
+" Plug 'sainnhe/gruvbox-material'
 " Plug 'casperstorm/sort-hvid.vim'
-Plug 'lokaltog/vim-monotone'
-Plug 'jaredgorski/fogbell.vim'
-Plug 'huyvohcmc/atlas.vim'
-Plug 'owickstrom/vim-colors-paramount'
-Plug 'robertmeta/nofrils'
-Plug '/Users/crs/Source/Private/sort-hvid.vim'
-Plug 'franbach/miramare'
-Plug 'wadackel/vim-dogrun'
-Plug 'alessandroyorba/sierra'
+" Plug 'lokaltog/vim-monotone'
+" Plug 'jaredgorski/fogbell.vim'
+" Plug 'huyvohcmc/atlas.vim'
+" Plug 'owickstrom/vim-colors-paramount'
+" Plug 'robertmeta/nofrils'
+" Plug '/Users/crs/Source/Private/sort-hvid.vim'
+" Plug 'franbach/miramare'
+" Plug 'wadackel/vim-dogrun'
+" Plug 'alessandroyorba/sierra'
 
 " LSP
-Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/diagnostic-nvim'
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'nvim-lua/diagnostic-nvim'
 
 " Completion
-Plug 'steelsojka/completion-buffers'
-Plug 'nvim-lua/completion-nvim'
+" Plug 'steelsojka/completion-buffers'
+" Plug 'nvim-lua/completion-nvim'
 
 call plug#end()
 
