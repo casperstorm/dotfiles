@@ -18,7 +18,7 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'machakann/vim-sandwich'
-Plug 'sheerun/vim-polyglot'
+" Plug 'sheerun/vim-polyglot'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-commentary'
@@ -28,14 +28,10 @@ Plug 'junegunn/fzf.vim'
 
 
 " Treesitter
-" Plug 'nvim-treesitter/nvim-treesitter'
-" Plug 'nvim-treesitter/nvim-treesitter-refactor'
-" Plug 'nvim-treesitter/nvim-treesitter-textobjects'
-" Plug 'nvim-treesitter/playground'
-" Plug 'romgrk/nvim-treesitter-context'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/completion-treesitter'
+Plug 'nvim-treesitter/playground'
 
-" " Coc
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 " Themes
 " Plug 'casperstorm/sort-hvid.vim'
@@ -43,23 +39,19 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'chriskempson/base16-vim'
 " Plug 'romainl/Apprentice'
 
-" Formatters
-" Plug 'sbdchd/neoformat'
 
 " Configure LSP
-" Plug 'neovim/nvim-lspconfig'
-
-" LSP Diagnostics
-" Plug 'nvim-lua/diagnostic-nvim'
+Plug 'neovim/nvim-lspconfig'
 
 " Completion source for buffers
-" Plug 'steelsojka/completion-buffers'
+Plug 'steelsojka/completion-buffers'
 
 " LSP/Treesitter completion
-" Plug 'nvim-lua/completion-nvim'
+Plug 'nvim-lua/completion-nvim'
 
 " Linting
-" Plug 'dense-analysis/ale'
+Plug 'dense-analysis/ale'
+Plug 'sbdchd/neoformat'
 
 call plug#end()
 

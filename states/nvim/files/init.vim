@@ -95,41 +95,30 @@ set winbl=10
 " ============================================================================ "
 
 source ~/.config/nvim/plugins/fzf.vim
-source ~/.config/nvim/plugins/coc.vim
+" source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/colorizer.vim
 source ~/.config/nvim/plugins/better-whitespace.vim
 " source ~/.config/nvim/plugins/ultisnips.vim
 
 " LSP
-" source ~/.config/nvim/plugins/lsp.vim
-" source ~/.config/nvim/plugins/completion.vim
+source ~/.config/nvim/plugins/lsp.vim
+source ~/.config/nvim/plugins/completion.vim
+
+lua require("treesitter")
 
 " luafile ~/.config/nvim/lua/treesitter.lua
 " luafile ~/.config/nvim/lua/colorizer.lua
 
-" Rust.vim
-let g:rustfmt_autosave = 1
-" let g:rust_fold = 1
-
-" colorizer
-
 " Neoformat
-" au BufWritePre *.js,*.ts,*.scss,*.jsx,*.tsx Neoformat
+au BufWritePre *.js,*.ts,*.scss,*.jsx,*.tsx,*.rs Neoformat
 
 " Disable ale
-" let g:ale_disable_lsp = 1
-" let g:ale_fix_on_save = 1
-" let g:ale_fixers = {}
-" let g:ale_fixers['javascript'] = ['eslint', 'prettier']
-" let g:ale_fixers['javascriptreact'] = ['eslint', 'prettier']
-" let g:ale_fixers['typescript'] = ['eslint', 'prettier']
-" let g:ale_fixers['typescriptreact'] = ['eslint', 'prettier']
-" let g:ale_fixers['rust'] = ['rustfmt']
-" let b:ale_rust_rustfmt_options = '--edition 2018'
+let g:ale_disable_lsp = 1
+let g:ale_fix_on_save = 1
 
-" map <leader>g] :ALENextWrap<cr>
-" map <leader>g[ :ALEPreviousWrap<cr>
-" map <leader>f :ALEFix<cr>
+map <leader>g] :ALENextWrap<cr>
+map <leader>g[ :ALEPreviousWrap<cr>
+map <leader>f :ALEFix<cr>
 
 " ============================================================================ "
 " ===                             KEY MAPPINGS                             === "
