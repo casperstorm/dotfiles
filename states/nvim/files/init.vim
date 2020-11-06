@@ -85,7 +85,7 @@ set statusline+=\ %p%%
 set termguicolors
 
 " Theme
-colorscheme base16-gruvbox-dark-hard
+colorscheme base16-onedark
 
 " Set floating window to be slightly transparent
 set winbl=10

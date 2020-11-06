@@ -1,0 +1,90 @@
+{
+    "editor.fontFamily": "Iosevka",
+    "editor.fontLigatures": true,
+    "workbench.activityBar.visible": false,
+    "workbench.editor.showIcons": false,
+    "editor.minimap.enabled": false,
+    "workbench.iconTheme": null,
+    "workbench.editor.showTabs": false,
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "workbench.fontAliasing": "antialiased",
+    "workbench.sideBar.location": "left",
+    "window.zoomLevel": 0,
+    "zenMode.fullScreen": false,
+    "editor.tabSize": 2,
+    "[typescriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.accessibilitySupport": "off",
+    "[json]": {
+        "editor.defaultFormatter": "vscode.json-language-features"
+    },
+    "workbench.colorTheme": "One Dark Pro",
+    "[javascriptreact]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "editor.formatOnSave": true,
+    "editor.lineNumbers": "relative",
+    "vim.leader": "<space>",
+    "vim.neovimPath": "/usr/local/bin/nvim",
+    "vim.enableNeovim": true,
+    "vim.useSystemClipboard": true,
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<leader>", "<leader>"],
+            "commands": [
+                "workbench.action.quickOpen",
+            ]
+        },
+        {
+            "before": ["<leader>", "g", "]"],
+            "commands": [
+                "editor.action.marker.nextInFiles",
+            ]
+        },
+        {
+            "before": ["<leader>", "g", "["],
+            "commands": [
+                "editor.action.marker.prevInFiles",
+            ]
+        },
+        {
+            "before": ["<leader>", "g", "d"],
+            "commands": [
+                "editor.action.revealDefinition",
+            ]
+        },
+        {
+            "before": ["<leader>", "g", "r"],
+            "commands": [
+                "editor.action.goToReferences",
+            ]
+        },
+        {
+            "before": ["<leader>", "g", "f"],
+            "commands": [
+                "editor.action.quickFix",
+            ]
+        },
+        {
+            "before": ["<leader>", "s", "r"],
+            "commands": [
+                "editor.action.rename",
+            ]
+        },
+        {
+            "before": [";"],
+            "commands": [
+                "extension.openRecentFiles",
+            ]
+        },
+        {
+            "before": ["<leader>", "j"],
+            "commands": [
+                "extension.searchUnderCursor",
+            ]
+        }
+    ],
+    "editor.fontSize": 13,
+}   

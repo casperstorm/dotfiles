@@ -17,7 +17,7 @@ endif
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'ntpeters/vim-better-whitespace'
-" Plug 'machakann/vim-sandwich'
+Plug 'machakann/vim-sandwich'
 Plug 'sheerun/vim-polyglot'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'christoomey/vim-tmux-navigator'
