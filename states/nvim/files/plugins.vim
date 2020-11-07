@@ -18,7 +18,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'machakann/vim-sandwich'
-" Plug 'sheerun/vim-polyglot'
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'tpope/vim-commentary'
@@ -26,12 +25,15 @@ Plug 'tpope/vim-sensible'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
-
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/completion-treesitter'
 Plug 'nvim-treesitter/playground'
 
+" Telescope
+Plug 'nvim-lua/popup.nvim'
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/telescope.nvim'
 
 " Themes
 " Plug 'casperstorm/sort-hvid.vim'

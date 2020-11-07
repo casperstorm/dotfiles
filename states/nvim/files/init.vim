@@ -95,7 +95,6 @@ set winbl=10
 " ============================================================================ "
 
 source ~/.config/nvim/plugins/fzf.vim
-" source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/colorizer.vim
 source ~/.config/nvim/plugins/better-whitespace.vim
 " source ~/.config/nvim/plugins/ultisnips.vim
@@ -105,9 +104,7 @@ source ~/.config/nvim/plugins/lsp.vim
 source ~/.config/nvim/plugins/completion.vim
 
 lua require("treesitter")
-
-" luafile ~/.config/nvim/lua/treesitter.lua
-" luafile ~/.config/nvim/lua/colorizer.lua
+lua require("telescope")
 
 " Neoformat
 au BufWritePre *.js,*.ts,*.scss,*.jsx,*.tsx,*.rs Neoformat
@@ -118,7 +115,6 @@ let g:ale_fix_on_save = 1
 
 map <leader>g] :ALENextWrap<cr>
 map <leader>g[ :ALEPreviousWrap<cr>
-map <leader>f :ALEFix<cr>
 
 " ============================================================================ "
 " ===                             KEY MAPPINGS                             === "
