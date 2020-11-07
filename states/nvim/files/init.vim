@@ -112,6 +112,12 @@ au BufWritePre *.js,*.ts,*.scss,*.jsx,*.tsx,*.rs Neoformat
 " Disable ale
 let g:ale_disable_lsp = 1
 let g:ale_fix_on_save = 1
+let g:ale_linters = {
+\   'javascript': ['eslint'],
+\   'typescript': ['eslint'],
+\   'javascriptreact': ['eslint'],
+\   'typescriptreact': ['eslint'],
+\}
 
 map <leader>g] :ALENextWrap<cr>
 map <leader>g[ :ALEPreviousWrap<cr>

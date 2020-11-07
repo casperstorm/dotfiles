@@ -37,10 +37,7 @@ Plug 'nvim-lua/telescope.nvim'
 
 " Themes
 " Plug 'casperstorm/sort-hvid.vim'
-" Plug '/Users/crs/Source/Private/sort-hvid.vim'
 Plug 'chriskempson/base16-vim'
-" Plug 'romainl/Apprentice'
-
 
 " Configure LSP
 Plug 'neovim/nvim-lspconfig'
