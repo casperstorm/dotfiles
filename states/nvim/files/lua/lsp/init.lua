@@ -12,6 +12,7 @@ local on_attach = function(client, bufnr)
   -- vim.fn.nvim_set_keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", {noremap = true, silent = true})
   vim.fn.nvim_set_keymap("n", "g0", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", {noremap = true, silent = true})
   vim.fn.nvim_set_keymap("n", "gW", "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>", {noremap = true, silent = true})
+  vim.fn.nvim_set_keymap("n", "ge", "<cmd>lua vim.lsp.util.show_line_diagnostics()<CR>", {noremap = true, silent = true})
 end
 
 nvim_lsp.tsserver.setup{

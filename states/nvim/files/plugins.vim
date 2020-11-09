@@ -25,6 +25,9 @@ Plug 'tpope/vim-sensible'
 Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
+" Languages
+Plug 'rust-lang/rust.vim'
+
 " Treesitter
 Plug 'nvim-treesitter/nvim-treesitter'
 Plug 'nvim-treesitter/completion-treesitter'
@@ -38,6 +41,7 @@ Plug 'nvim-lua/telescope.nvim'
 " Themes
 " Plug 'casperstorm/sort-hvid.vim'
 Plug 'chriskempson/base16-vim'
+Plug 'sainnhe/sonokai'
 
 " Configure LSP
 Plug 'neovim/nvim-lspconfig'
