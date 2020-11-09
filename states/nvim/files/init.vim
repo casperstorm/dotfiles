@@ -94,6 +94,7 @@ set winbl=10
 " ===                           PLUGIN SETUP                               === "
 " ============================================================================ "
 
+
 source ~/.config/nvim/plugins/fzf.vim
 source ~/.config/nvim/plugins/colorizer.vim
 source ~/.config/nvim/plugins/better-whitespace.vim
@@ -103,27 +104,17 @@ source ~/.config/nvim/plugins/better-whitespace.vim
 source ~/.config/nvim/plugins/lsp.vim
 source ~/.config/nvim/plugins/completion.vim
 
+lua require("formatter")
 lua require("treesitter")
 lua require("telescope")
 
-" Neoformat
-au BufWritePre *.js,*.ts,*.scss,*.jsx,*.tsx Neoformat
+nnoremap <silent> <Leader>g[ <cmd>PrevDiagnostic<CR>
+nnoremap <silent> <Leader>g] <cmd>NextDiagnostic<CR>
 
-" Rust.vim
-let g:rustfmt_autosave = 1
-
-" Disable ale
-let g:ale_disable_lsp = 1
-" let g:ale_fix_on_save = 1
-let g:ale_linters = {}
-let g:ale_linters.javascript = ['eslint']
-let g:ale_linters.typescript = ['eslint']
-let g:ale_linters.typescriptreact = ['eslint']
-let g:ale_linters.javascriptreact = ['eslint']
-let g:ale_linters.rust = []
-
-map <leader>g] :ALENextWrap<cr>
-map <leader>g[ :ALEPreviousWrap<cr>
+augroup Format
+    autocmd!
+    autocmd BufWritePost * Format
+augroup END
 
 " ============================================================================ "
 " ===                             KEY MAPPINGS                             === "
