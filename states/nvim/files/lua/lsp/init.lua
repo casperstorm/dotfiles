@@ -1,10 +1,11 @@
-local diagnostic = require('diagnostic')
+-- local diagnostic = require('diagnostic')
 local nvim_lsp = require('nvim_lsp')
 local configs = require('nvim_lsp/configs')
 local util = require('nvim_lsp/util')
 
 local on_attach = function(client, bufnr)
-  diagnostic.on_attach(client, bufnr)
+  print("'" .. client.name .. "' language server started" );
+  -- diagnostic.on_attach(client, bufnr)
 
   -- Keybindings for LSPs
   vim.fn.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", {noremap = true, silent = true})
@@ -22,41 +23,43 @@ nvim_lsp.tsserver.setup{
 nvim_lsp.rust_analyzer.setup{
   on_attach = on_attach,
 }
-nvim_lsp.diagnosticls.setup {
-  -- on_attach = on_attach,
-  filetypes = {"javascript", "typescript"},
-  init_options = {
-    linters = {
-      eslint = {
-        command = "./node_modules/.bin/eslint",
-        rootPatterns = {".git"},
-        debounce = 100,
-        args = {
-          "--stdin",
-          "--stdin-filename",
-          "%filepath",
-          "--format",
-          "json"
-        },
-        sourceName = "eslint",
-        parseJson = {
-          errorsRoot = "[0].messages",
-          line = "line",
-          column = "column",
-          endLine = "endLine",
-          endColumn = "endColumn",
-          message = "${message} [${ruleId}]",
-          security = "severity"
-        },
-        securities = {
-          [2] = "error",
-          [1] = "warning"
-        }
-      },
-      filetypes = {
-        javascript = "eslint",
-        typescript = "eslint"
-      }
-    }
-  }
-}
+-- nvim_lsp.diagnosticls.setup {
+--   on_attach = on_attach,
+--   filetypes = {"javascript", "typescript", "javascriptreact", "typescriptreact"},
+--   init_options = {
+--     linters = {
+--       eslint = {
+--         command = "./node_modules/.bin/eslint",
+--         rootPatterns = {".git"},
+--         debounce = 100,
+--         args = {
+--           "--stdin",
+--           "--stdin-filename",
+--           "%filepath",
+--           "--format",
+--           "json"
+--         },
+--         sourceName = "eslint",
+--         parseJson = {
+--           errorsRoot = "[0].messages",
+--           line = "line",
+--           column = "column",
+--           endLine = "endLine",
+--           endColumn = "endColumn",
+--           message = "${message} [${ruleId}]",
+--           security = "severity"
+--         },
+--         securities = {
+--           [2] = "error",
+--           [1] = "warning"
+--         }
+--       },
+--       filetypes = {
+--         javascript = "eslint",
+--         javascriptreact = "eslint",
+--         typescript = "eslint",
+--         typescriptreact = "eslint"
+--       }
+--     }
+--   }
+-- }
