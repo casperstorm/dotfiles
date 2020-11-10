@@ -43,6 +43,9 @@ Plug 'nvim-lua/telescope.nvim'
 Plug 'chriskempson/base16-vim'
 Plug 'sainnhe/sonokai'
 
+" LSP Diagnostics
+Plug 'nvim-lua/diagnostic-nvim'
+
 " Configure LSP
 Plug 'neovim/nvim-lspconfig'
 
@@ -52,9 +55,8 @@ Plug 'steelsojka/completion-buffers'
 " LSP/Treesitter completion
 Plug 'nvim-lua/completion-nvim'
 
-" Linting
-Plug 'dense-analysis/ale'
-Plug 'sbdchd/neoformat'
+" Formatters
+Plug 'mhartington/formatter.nvim'
 
 call plug#end()
 
