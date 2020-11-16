@@ -44,7 +44,7 @@ Plug 'chriskempson/base16-vim'
 Plug 'sainnhe/sonokai'
 
 " LSP Diagnostics
-Plug 'nvim-lua/diagnostic-nvim'
+" Plug 'nvim-lua/diagnostic-nvim'
 
 " Configure LSP
 Plug 'neovim/nvim-lspconfig'

@@ -108,9 +108,6 @@ lua require("formatter")
 lua require("treesitter")
 lua require("telescope")
 
-nnoremap <silent> <Leader>g[ <cmd>PrevDiagnostic<CR>
-nnoremap <silent> <Leader>g] <cmd>NextDiagnostic<CR>
-
 augroup Format
     autocmd!
     autocmd BufWritePost * Format
