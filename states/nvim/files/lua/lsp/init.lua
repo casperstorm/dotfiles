@@ -1,4 +1,4 @@
-local nvim_lsp = require('nvim_lsp')
+local nvim_lsp = require('lspconfig')
 
 -- Keybindings for LSPs
 vim.fn.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", {noremap = true, silent = true})
@@ -15,7 +15,7 @@ vim.fn.nvim_set_keymap("n", "<leader>ge", "<cmd>lua vim.lsp.diagnostic.set_locli
 local on_attach = function(client, bufnr)
   print("'" .. client.name .. "' language server started" );
   require"completion".on_attach(client)
-  -- diagnostic.on_attach(client, bufnr)
+  -- require"diagnostic".on_attach(client, bufnr)
 end
 
 nvim_lsp.tsserver.setup{
@@ -30,7 +30,7 @@ nvim_lsp.diagnosticls.setup {
   init_options = {
     linters = {
       eslint = {
-        command = "./node_modules/.bin/eslint",
+        command = "eslint",
         rootPatterns = {".git"},
         debounce = 100,
         args = {
@@ -47,7 +47,7 @@ nvim_lsp.diagnosticls.setup {
           column = "column",
           endLine = "endLine",
           endColumn = "endColumn",
-          message = "${message} [${ruleId}]",
+          message = '[eslint] ${message} [${ruleId}]',
           security = "severity"
         },
         securities = {
