@@ -43,6 +43,9 @@ Plug 'nvim-lua/telescope.nvim'
 Plug 'chriskempson/base16-vim'
 Plug 'sainnhe/sonokai'
 
+" JSX/TSX
+Plug 'peitalin/vim-jsx-typescript'
+
 " LSP Diagnostics
 " Plug 'nvim-lua/diagnostic-nvim'
 

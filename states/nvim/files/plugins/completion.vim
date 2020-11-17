@@ -2,10 +2,10 @@
 let g:completion_enable_auto_popup = 1
 let g:completion_enable_auto_paren = 1
 let g:completion_auto_change_source = 1
-" let g:completion_chain_complete_list = [
-"     \{'complete_items': ['lsp']},
-"     \{'complete_items': ['buffers']}
-" \]
+let g:completion_chain_complete_list = [
+    \{'complete_items': ['lsp']},
+    \{'complete_items': ['buffers']}
+\]
 
  " Work with endwise
 let g:completion_confirm_key = "\<C-y>"
