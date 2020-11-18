@@ -18,13 +18,27 @@ local on_attach = function(client, bufnr)
   -- require"diagnostic".on_attach(client, bufnr)
 end
 
-nvim_lsp.tsserver.setup{
-  on_attach = on_attach,
-}
-nvim_lsp.rust_analyzer.setup{
+nvim_lsp.tsserver.setup {
   on_attach = on_attach,
 }
 
+nvim_lsp.rust_analyzer.setup {
+  on_attach = on_attach,
+  settings = {
+    ['rust-analyzer'] = {
+      checkOnSave = {
+        command = 'clipply',
+        overrideCommand = {
+          'cargo',
+          'clippy',
+          '--workspace',
+          '--message-format=json',
+          '--all-targets',
+        },
+      },
+    }
+  }
+}
 
 nvim_lsp.diagnosticls.setup {
   on_attach = on_attach_vim,
