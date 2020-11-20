@@ -7,7 +7,7 @@ vim.fn.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.implementation()<CR>", {
 vim.fn.nvim_set_keymap("n", "<c-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", {noremap = true, silent = true})
 vim.fn.nvim_set_keymap("n", "g0", "<cmd>lua vim.lsp.buf.document_symbol()<CR>", {noremap = true, silent = true})
 vim.fn.nvim_set_keymap("n", "gW", "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>", {noremap = true, silent = true})
-vim.fn.nvim_set_keymap("n", "<leader>k", "<cmd>lua vim.lsp.util.show_line_diagnostics()<CR>", {noremap = true, silent = true})
+vim.fn.nvim_set_keymap("n", "<leader>k", "<cmd>lua vim.lsp.diagnostic.show_line_diagnostics<CR>", {noremap = true, silent = true})
 vim.fn.nvim_set_keymap("n", "<leader>g]", "<cmd>lua vim.lsp.diagnostic.goto_next()<CR>", {noremap = true, silent = true})
 vim.fn.nvim_set_keymap("n", "<leader>g[", "<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>", {noremap = true, silent = true})
 vim.fn.nvim_set_keymap("n", "<leader>ge", "<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>", {noremap = true, silent = true})
@@ -50,6 +50,7 @@ nvim_lsp.diagnosticls.setup {
     "typescript.tsx",
     "css",
     "scss",
+    "markdown",
   },
   init_options = {
     linters = {
@@ -70,6 +71,19 @@ nvim_lsp.diagnosticls.setup {
         },
         securities = {[2] = "error", [1] = "warning"},
       },
+      markdownlint = {
+        command = "markdownlint",
+        rootPatterns = {".git"},
+        isStderr = true,
+        debounce = 100,
+        args = {"--stdin"},
+        offsetLine = 0,
+        offsetColumn = 0,
+        sourceName = "markdownlint",
+        securities = {undefined = "hint"},
+        formatLines = 1,
+        formatPattern = {"^.*:(\\d+)\\s+(.*)$", {line = 1, column = -1, message = 2}},
+      },
     },
     filetypes = {
       javascript = "eslint",
@@ -77,6 +91,7 @@ nvim_lsp.diagnosticls.setup {
       typescript = "eslint",
       typescriptreact = "eslint",
       ["typescript.tsx"] = "eslint",
+      markdown = "markdownlint",
     },
     formatters = {},
     formatFiletypes = {},
