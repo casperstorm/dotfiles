@@ -104,14 +104,16 @@ source ~/.config/nvim/plugins/better-whitespace.vim
 source ~/.config/nvim/plugins/lsp.vim
 source ~/.config/nvim/plugins/completion.vim
 
-lua require("formatter")
-lua require("treesitter")
+lua require("format")
+" lua require("treesitter")
 lua require("telescope")
 
 augroup Format
     autocmd!
     autocmd BufWritePost * Format
 augroup END
+
+" nnoremap <silent> <C-f> :Format<CR>
 
 " ============================================================================ "
 " ===                             KEY MAPPINGS                             === "

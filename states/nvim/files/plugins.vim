@@ -26,12 +26,13 @@ Plug '/usr/local/opt/fzf'
 Plug 'junegunn/fzf.vim'
 
 " Languages
-Plug 'rust-lang/rust.vim'
+Plug 'sheerun/vim-polyglot'
+" Plug 'rust-lang/rust.vim'
 
 " Treesitter
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'nvim-treesitter/completion-treesitter'
-Plug 'nvim-treesitter/playground'
+" Plug 'nvim-treesitter/nvim-treesitter'
+" Plug 'nvim-treesitter/completion-treesitter'
+" Plug 'nvim-treesitter/playground'
 
 " Telescope
 Plug 'nvim-lua/popup.nvim'
