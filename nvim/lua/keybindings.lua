@@ -11,6 +11,9 @@ map("n", "<C-j>", "<C-w>j")
 map("n", "<C-k>", "<C-w>k")
 map("n", "<C-l>", "<C-w>l")
 
+--- hop
+map("n", "s", "<cmd>HopWord<CR>")
+
 --- LSP
 map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
 
@@ -52,8 +55,7 @@ map('o', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.
 -- whichkey
 local wk = require("which-key")
 wk.register({
-    s = {"<cmd>HopWord<cr>", "hop"},
-    l = {
+   l = {
         name = "lsp",
         r = {"<cmd>lua require'telescope.builtin'.lsp_references{}<CR>", "references"},
         d = {"<cmd>lua vim.lsp.buf.definition()<CR>", "definition"},

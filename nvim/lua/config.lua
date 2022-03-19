@@ -26,8 +26,3 @@ cmd([[
 set autoread
 autocmd FocusGained * checktime
 ]])
-
--- changes the window-local current directory to be the same as the directory of the current file.
-cmd([[
-autocmd BufEnter * silent! lcd %:p:h
-]])
