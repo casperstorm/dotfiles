@@ -149,6 +149,11 @@ return require('packer').startup(function(use)
     config = function() 
         require'nvim-tree'.setup {
             auto_close = true,
+            actions = {
+                open_file = {
+                    quit_on_open = true,
+                },
+            },
         } 
     end
   }
