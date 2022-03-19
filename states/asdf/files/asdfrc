@@ -1,2 +1,0 @@
-# Read other files than .tool-versions, eg .nvmrc
-legacy_version_file = yes
