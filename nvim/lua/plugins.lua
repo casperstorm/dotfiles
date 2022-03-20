@@ -181,6 +181,23 @@ return require('packer').startup(function(use)
     end
   }
 
+  -- tmux
+  use({
+      "aserowy/tmux.nvim",
+      config = function()
+          require("tmux").setup({
+              navigation = {
+                  -- enables default keybindings (C-hjkl) for normal mode
+                  enable_default_keybindings = true,
+              },
+              resize = {
+                  -- enables default keybindings (A-hjkl) for normal mode
+                  enable_default_keybindings = true,
+              }
+          })
+      end
+  })
+
   if packer_bootstrap then
     require('packer').sync()
   end
