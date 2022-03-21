@@ -57,6 +57,7 @@ wk.register({
    w = { "<cmd>w!<CR>", "save" },
    l = {
         name = "lsp",
+        f = {"<cmd>lua vim.lsp.buf.formatting()<cr>", "format"},
         r = {"<cmd>lua require'telescope.builtin'.lsp_references{}<CR>", "references"},
         d = {"<cmd>lua vim.lsp.buf.definition()<CR>", "definition"},
         R = {"<cmd>lua vim.lsp.buf.rename()<CR>", "rename"},
