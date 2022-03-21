@@ -77,17 +77,27 @@ wk.register({
             mode = "v"
         }
     },
+    s = {
+        name = "search",
+        f = {"<cmd>Telescope find_files<cr>", "files" },
+        w = {"<cmd>Telescope grep_string<cr>", "word"},
+        r = {"<cmd>Telescope oldfiles<cr>", "recent files" },
+        t = {"<cmd>Telescope live_grep<cr>", "text" },
+        k = {"<cmd>Telescope keymaps<cr>", "keymap" },
+        c = {"<cmd>Telescope commands<cr>", "commands" },
+        p = {
+            "<cmd>lua require('telescope.builtin.internal').colorscheme({enable_preview = true})<cr>",
+            "colorschemes",
+        },
+    },
     b = {
         name = "+buffers",
-        b = {"<cmd>Telescope buffers<cr>", "all buffers"},
-        d = {"<cmd>bd<CR>", "close Buffer"}
-    },
-    f = {
-        name = "+file",
-        f = {"<cmd>Telescope find_files<cr>", "find files"},
-        j = {"<cmd>Telescope grep_string<cr>", "find word"},
-        g = {"<cmd>Telescope live_grep<cr>", "grep"},
-        s = {"<cmd>Telescope current_buffer_fuzzy_find<cr>", "search in file"},
+        f = {"<cmd>Telescope buffers<cr>", "find"},
+        d = {"<cmd>bd<CR>", "close"},
+        D = {
+          "<cmd>BufferOrderByDirectory<cr>",
+          "sort by directory",
+        },
     },
     g = {
         name = "git",
