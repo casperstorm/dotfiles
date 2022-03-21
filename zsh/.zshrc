@@ -11,5 +11,10 @@ alias l='ls -lAFh'
 alias ll='l'
 alias vim='nvim'
 
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
+# zsh-autosuggestions & zsh-syntax-highlighting
+source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+plugins=(git)
 source $ZSH/oh-my-zsh.sh
+
