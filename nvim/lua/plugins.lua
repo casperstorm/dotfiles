@@ -70,15 +70,30 @@ return require('packer').startup(function(use)
   "folke/which-key.nvim",
   config = function()
       require("which-key").setup {
-          window = {
-              position = "bottom",
+          plugins = {
+              marks = true, -- shows a list of your marks on ' and `
+              registers = true, -- shows your registers on " in NORMAL or <C-r> in INSERT mode
+              -- the presets plugin, adds help for a bunch of default keybindings in Neovim
+              -- No actual key bindings are created
           },
-          triggers = {"<leader>"},
-        -- your configuration comes here
-        -- or leave it empty to use the default settings
-        -- refer to the configuration section below
+          window = {
+              border = "single", -- none, single, double, shadow
+              position = "bottom", -- bottom, top
+          },
       }
     end
+  }
+
+  -- minimap
+  use {
+      'wfxr/minimap.vim',
+      run = "cargo install --locked code-minimap",
+      cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
+      config = function ()
+          vim.cmd ("let g:minimap_width = 10")
+          vim.cmd ("let g:minimap_auto_start = 1")
+          vim.cmd ("let g:minimap_auto_start_win_enter = 1")
+      end,
   }
 
   -- Status line

@@ -2,9 +2,6 @@ local map = require("utils").map
 
 vim.g.mapleader = " "
 
---- save
-map("n", "<C-s>", ":w<cr>")
-
 --- window movement
 map("n", "<C-h>", "<C-w>h")
 map("n", "<C-j>", "<C-w>j")
@@ -55,6 +52,9 @@ map('o', 'F', "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.
 -- whichkey
 local wk = require("which-key")
 wk.register({
+   h = {"<cmd>nohlsearch<cr>", "clear search"},
+   e = {"<cmd>NvimTreeToggle<CR>", "explorer"},
+   w = { "<cmd>w!<CR>", "save" },
    l = {
         name = "lsp",
         r = {"<cmd>lua require'telescope.builtin'.lsp_references{}<CR>", "references"},
@@ -86,22 +86,13 @@ wk.register({
         f = {"<cmd>Telescope find_files<cr>", "find files"},
         j = {"<cmd>Telescope grep_string<cr>", "find word"},
         g = {"<cmd>Telescope live_grep<cr>", "grep"},
-        n = {"<cmd>enew<cr>", "new file"},
         s = {"<cmd>Telescope current_buffer_fuzzy_find<cr>", "search in file"},
     },
-    h = {"<cmd>nohlsearch<cr>", "clear search"},
-    e = {"<cmd>NvimTreeToggle<CR>", "explorer"},
     g = {
         name = "git",
         s = {"<cmd>lua require'telescope.builtin'.git_status{}<CR>", "status"},
         c = {"<cmd>lua require'telescope.builtin'.git_commits{}<CR>", "commits"},
         d = {"<cmd>Gvdiffsplit<cr>", "diffsplit"}
-    },
-    w = {
-        name = "window",
-        v = {"<cmd>vsplit<cr>", "vertical split"},
-        h = {"<cmd>split<cr>", "horizontal split"},
-        c = {"<cmd>close<cr>", "close"}
     },
     p = {
         name = "packer",
