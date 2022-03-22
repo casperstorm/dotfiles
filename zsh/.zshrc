@@ -2,6 +2,9 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
+# zoxide
+eval "$(zoxide init zsh)"
+
 # alias
 alias t="tmux attach || tmux new-session"
 alias l='ls -lAFh'
