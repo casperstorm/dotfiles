@@ -106,17 +106,17 @@ wk.register({
         d = {"<cmd>Gvdiffsplit<cr>", "diffsplit"},
         b = {"<cmd>Git blame<cr>", "blame"}
     },
+    p = {
+        name = "packer",
+        s = {"<cmd>PackerSync<cr>", "sync"},
+        i = {"<cmd>PackerInstall<cr>", "install"},
+        c = {"<cmd>PackerCompile<cr>", "compile"},
+        l = {"<cmd>PackerClean<cr>", "clean"}
+    },
     v = {
         name = "nvim",
         r = {":so $MYVIMRC<cr>", "reload init.lua"},
         e = {":e $MYVIMRC<cr>", "edit init.lua"},
-        p = {
-            name = "packer",
-            s = {"<cmd>PackerSync<cr>", "sync"},
-            i = {"<cmd>PackerInstall<cr>", "install"},
-            c = {"<cmd>PackerCompile<cr>", "compile"},
-            l = {"<cmd>PackerClean<cr>", "clean"}
-        },
     }
 }, {
     prefix = "<leader>"
