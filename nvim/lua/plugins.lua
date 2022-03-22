@@ -17,7 +17,13 @@ return require('packer').startup(function(use)
   use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = [[ require('plugins/nvim-treesitter') ]]}
 
   -- Color
-  use {"rebelot/kanagawa.nvim"}
+  use {"rebelot/kanagawa.nvim", 
+  config = function()
+      require("kanagawa").setup {
+        dimInactive = true,
+      }
+    end
+  }
 
   -- Auto completion
   use {'hrsh7th/nvim-cmp', config = [[ require('plugins/nvim-cmp') ]]}
@@ -82,18 +88,6 @@ return require('packer').startup(function(use)
           },
       }
     end
-  }
-
-  -- minimap
-  use {
-      'wfxr/minimap.vim',
-      run = "cargo install --locked code-minimap",
-      cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
-      config = function ()
-          vim.cmd ("let g:minimap_width = 10")
-          vim.cmd ("let g:minimap_auto_start = 1")
-          vim.cmd ("let g:minimap_auto_start_win_enter = 1")
-      end,
   }
 
   -- Status line
