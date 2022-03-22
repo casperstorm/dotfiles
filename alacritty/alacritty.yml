@@ -13,11 +13,9 @@ font:
   normal:
     family: Iosevka Nerd Font Mono
     style: Light
-
   bold:
     family: Iosevka Nerd Font Mono
-    style: Regular
-
+    style: Bold
   italic:
     family: Iosevka Nerd Font Mono
     style: Light Italic
