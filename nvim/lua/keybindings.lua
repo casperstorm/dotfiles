@@ -54,7 +54,7 @@ local wk = require("which-key")
 wk.register({
    h = {"<cmd>nohlsearch<cr>", "clear search"},
    e = {"<cmd>NvimTreeToggle<CR>", "explorer"},
-   w = { "<cmd>w!<CR>", "save" },
+   w = {"<cmd>w!<CR>", "save" },
    l = {
         name = "lsp",
         f = {"<cmd>lua vim.lsp.buf.formatting()<cr>", "format"},
@@ -103,19 +103,20 @@ wk.register({
         name = "git",
         s = {"<cmd>lua require'telescope.builtin'.git_status{}<CR>", "status"},
         c = {"<cmd>lua require'telescope.builtin'.git_commits{}<CR>", "commits"},
-        d = {"<cmd>Gvdiffsplit<cr>", "diffsplit"}
-    },
-    p = {
-        name = "packer",
-        s = {"<cmd>PackerSync<cr>", "sync"},
-        i = {"<cmd>PackerInstall<cr>", "install"},
-        c = {"<cmd>PackerCompile<cr>", "compile"},
-        l = {"<cmd>PackerClean<cr>", "clean"}
+        d = {"<cmd>Gvdiffsplit<cr>", "diffsplit"},
+        b = {"<cmd>Git blame<cr>", "blame"}
     },
     v = {
-        name = "vim",
+        name = "nvim",
         r = {":so $MYVIMRC<cr>", "reload init.lua"},
         e = {":e $MYVIMRC<cr>", "edit init.lua"},
+        p = {
+            name = "packer",
+            s = {"<cmd>PackerSync<cr>", "sync"},
+            i = {"<cmd>PackerInstall<cr>", "install"},
+            c = {"<cmd>PackerCompile<cr>", "compile"},
+            l = {"<cmd>PackerClean<cr>", "clean"}
+        },
     }
 }, {
     prefix = "<leader>"
