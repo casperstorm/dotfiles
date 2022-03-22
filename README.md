@@ -1,42 +1,37 @@
-# Dotfiles
+# dotfiles
 
+## prerequisites
 
+brew: https://brew.sh/  
+ohmyz: https://ohmyz.sh/#install  
+fonts: https://www.nerdfonts.com/font-downloads  
 
 ```bash
-# brew
-# https://brew.sh/
+# utils
+brew install zoxide
+brew install rg
+brew install asdf
+```
 
-# oh-my-zsh
-# https://ohmyz.sh/#install
+## terminal
+```bash
+brew install alacritty
+brew install zsh-syntax-highlighting
+brew install zsh-autosuggestions
+brew install tmux
+# and tpm (tmux package manager)
+# https://github.com/tmux-plugins/tpm#installation
+```
 
-# font (iosevka)
-# https://www.nerdfonts.com/font-downloads
-
-# nvim
+## nvim
+```bash
 brew install nvim
-# and Packer (https://github.com/wbthomason/packer.nvim#quickstart)
-
-# python3 & node providers
+# and packer (plugin manager)
+# https://github.com/wbthomason/packer.nvim#quickstart
 npm install -g nvim
 pip3 install nvim
 
-# zsh
-brew install zsh-syntax-highlighting
-brew install zsh-autosuggestions
-
-# version manager
-brew install asdf
-
-# multiplexer
-brew install tmux
-# and TPM (https://github.com/tmux-plugins/tpm#installation)
-
-# LSP's
+# lsp's for nvim
 brew install rust-analyzer
-
-# utils
-brew install z
-brew install rg
-
 ```
 
