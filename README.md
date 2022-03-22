@@ -12,6 +12,7 @@ fonts: https://www.nerdfonts.com/font-downloads
 # utils
 brew install zoxide
 brew install rg
+brew install fd
 brew install asdf
 ```
 

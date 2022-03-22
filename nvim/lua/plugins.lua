@@ -49,16 +49,26 @@ return require('packer').startup(function(use)
                   },
               },
           },
+          pickers = {
+            find_files = {
+                find_command = { 'fd', '--type', 'f', '--strip-cwd-prefix', '--exclude', '.git/' },
+                follow = true,
+                hidden = true,
+                no_ignore = false
+            },
+            buffers = {
+                -- to make it a little more compact, since i see it more often.
+                theme = "dropdown",
+            },
+          },
           extensions = {
             ["ui-select"] = {
               require("telescope.themes").get_dropdown {
-                -- even more opts
               }
             }
           }
         }
-        -- To get fzf loaded and working with telescope, you need to call
-        -- load_extension, somewhere after setup function:
+
         require("telescope").load_extension("ui-select")
         require("telescope").load_extension("fzf")
     end
