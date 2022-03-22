@@ -39,7 +39,7 @@ return require('packer').startup(function(use)
   -- Telescope
   use {
     'nvim-telescope/telescope.nvim',
-    requires = { {'nvim-lua/plenary.nvim'} },
+    requires = { {'nvim-lua/plenary.nvim'}, {"nvim-telescope/telescope-fzf-native.nvim", run = "make"} },
     config = function()
         require("telescope").setup {
           defaults = {
@@ -60,6 +60,7 @@ return require('packer').startup(function(use)
         -- To get fzf loaded and working with telescope, you need to call
         -- load_extension, somewhere after setup function:
         require("telescope").load_extension("ui-select")
+        require("telescope").load_extension("fzf")
     end
   }
   use {'nvim-telescope/telescope-ui-select.nvim' }
