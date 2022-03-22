@@ -56,10 +56,7 @@ return require('packer').startup(function(use)
                 hidden = true,
                 no_ignore = false
             },
-            buffers = {
-                -- to make it a little more compact, since i see it more often.
-                theme = "dropdown",
-            },
+            buffers = {},
           },
           extensions = {
             ["ui-select"] = {
