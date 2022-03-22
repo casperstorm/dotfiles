@@ -79,8 +79,8 @@ wk.register({
     },
     s = {
         name = "search",
-        f = {"<cmd>Telescope find_files<cr>", "files" },
-        w = {"<cmd>Telescope grep_string<cr>", "word"},
+        f = {"<cmd>Telescope find_files<cr>", "all files" },
+        w = {"<cmd>Telescope grep_string<cr>", "word under cursor"},
         r = {"<cmd>Telescope oldfiles<cr>", "recent files" },
         t = {"<cmd>Telescope live_grep<cr>", "text" },
         k = {"<cmd>Telescope keymaps<cr>", "keymap" },
