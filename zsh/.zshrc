@@ -2,6 +2,9 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="robbyrussell"
 
+# asdf
+. $(brew --prefix)/opt/asdf/libexec/asdf.sh
+
 # zoxide
 eval "$(zoxide init zsh)"
 
