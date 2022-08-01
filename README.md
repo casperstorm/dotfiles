@@ -36,5 +36,10 @@ pip3 install nvim
 
 # lsp's for nvim
 brew install rust-analyzer
+
+# create nvim/lua/local.lua for whitelist url
+#
+# local whitelist_dir = 'dir/to/code'
+# return whitelist_dir
 ```
 

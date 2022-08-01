@@ -1,3 +1,6 @@
+-- Used to define whitelist path
+local whitelist_dir = require('local')
+
 vim.cmd [[packadd packer.nvim]]
 local fn = vim.fn
 local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
@@ -58,7 +61,7 @@ use {
                 },
                 buffers = {},
                 diagnostic = {
-                    root_dir = "/Users/crs/Code",
+                    root_dir = whitelist_dir,
                 },
             },
             extensions = {
@@ -124,7 +127,6 @@ use {
                                 local count = { 0, 0, 0, 0 }
                                 for _, diagnostic in ipairs(diagnostics) do
                                     local name = vim.api.nvim_buf_get_name(diagnostic.bufnr)
-                                    local whitelist_dir = "/Users/crs/Code"
                                     local allowed = string.sub(name, 1, #whitelist_dir) == whitelist_dir
 
                                     if allowed then
