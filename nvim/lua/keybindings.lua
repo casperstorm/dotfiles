@@ -20,8 +20,8 @@ map("n", ";", "<cmd>Telescope buffers<cr>")
 
 
 --- tabs
-map("n", "<Tab>", "<cmd>BufferNext<CR>")
-map("n", "<S-Tab>", "<cmd>BufferPrevious<CR>")
+map("n", "<Tab>", "<cmd>bn<CR>")
+map("n", "<S-Tab>", "<cmd>bp<CR>")
 
 -- move lines up and down in visual mode
 map('v', 'J', ":m '>+1<CR>gv=gv")
