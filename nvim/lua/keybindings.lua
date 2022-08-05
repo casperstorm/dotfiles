@@ -80,9 +80,8 @@ wk.register({
         b = {"<cmd>Telescope current_buffer_fuzzy_find<CR>", "find in buffer" },
         k = {"<cmd>Telescope keymaps<cr>", "keymap" },
         m = {"<cmd>Telescope marks<cr>", "marks" },
-        p = {"<cmd>Telescope colorscheme<cr>", "colorschemes" },
-        t = {"<cmd>Telescope live_grep<cr>", "text" },
-        w = {"<cmd>Telescope grep_string<cr>", "word under cursor"},
+        g = {"<cmd>Telescope live_grep<cr>", "grep" },
+        w = {"<cmd>Telescope grep_string<cr>", "find word"},
     },
     b = {
         name = "+buffers",
