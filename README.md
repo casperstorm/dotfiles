@@ -36,10 +36,14 @@ pip3 install nvim
 
 # lsp's for nvim
 brew install rust-analyzer
-
-# create nvim/lua/local.lua for whitelist url
-#
-# local whitelist_dir = 'dir/to/code'
-# return whitelist_dir
 ```
 
+## symbolic links
+```bash
+# i normally make symbolic links to where i want configs
+# eg.
+ln -s tmux/.tmux.conf ~ 
+ln -s zsh/.zshrc ~
+ln -s nvim ~/.config
+ln -s alacritty ~/.config
+```
