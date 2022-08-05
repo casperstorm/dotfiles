@@ -85,10 +85,7 @@ wk.register({
         t = {"<cmd>Telescope live_grep<cr>", "text" },
         k = {"<cmd>Telescope keymaps<cr>", "keymap" },
         c = {"<cmd>Telescope commands<cr>", "commands" },
-        p = {
-            "<cmd>lua require('telescope.builtin.internal').colorscheme({enable_preview = true})<cr>",
-            "colorschemes",
-        },
+        p = {"<cmd>Telescope colorscheme<cr>", "colorschemes" },
     },
     b = {
         name = "+buffers",

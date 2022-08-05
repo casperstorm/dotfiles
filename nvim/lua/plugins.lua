@@ -28,6 +28,12 @@ return require('packer').startup(function(use)
     end
 }
 
+-- Autopairs
+use {
+	"windwp/nvim-autopairs",
+    config = function() require("nvim-autopairs").setup {} end
+}
+
 -- Auto completion
 use {'hrsh7th/nvim-cmp', config = [[ require('plugins/nvim-cmp') ]]}
 use {'hrsh7th/cmp-nvim-lsp'}
@@ -54,22 +60,10 @@ use {
             },
             pickers = {
                 find_files = {
-                    find_command = { 'fd', '--type', 'f', '--strip-cwd-prefix', '--exclude', '.git/' },
-                    follow = true,
+                    file_ignore_patterns = { ".cargo/", ".git/" },
                     hidden = true,
-                    no_ignore = false
-                },
-                buffers = {},
-                diagnostic = {
-                    root_dir = whitelist_dir,
                 },
             },
-            extensions = {
-                ["ui-select"] = {
-                    require("telescope.themes").get_dropdown {
-                    }
-                }
-            }
         }
 
         require("telescope").load_extension("ui-select")
@@ -115,33 +109,11 @@ use {
     config = function()
         require('lualine').setup {
             sections = {
+                lualine_a = {'mode'},
                 lualine_b = {
-                    'branch',
-                    'diff',
-                    {
-                        'diagnostics',
-                        -- .get() for project wide counts (repo uses .get(0) for buffer only)
-                        sources = {
-                            function()
-                                local diagnostics = vim.diagnostic.get()
-                                local count = { 0, 0, 0, 0 }
-                                for _, diagnostic in ipairs(diagnostics) do
-                                    local name = vim.api.nvim_buf_get_name(diagnostic.bufnr)
-                                    local allowed = string.sub(name, 1, #whitelist_dir) == whitelist_dir
-
-                                    if allowed then
-                                        count[diagnostic.severity] = count[diagnostic.severity] + 1
-                                    end
-                                end
-                                return {
-                                    error = count[vim.diagnostic.severity.ERROR],
-                                    warn = count[vim.diagnostic.severity.WARN],
-                                    info = count[vim.diagnostic.severity.INFO],
-                                    hint = count[vim.diagnostic.severity.HINT],
-                                }
-                            end
-                        },
-                    }
+                    { 'diagnostics', sources = {"nvim_lsp"}, symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '} },
+                    'encoding',
+                    'filetype'
                 },
                 lualine_c = {
                     {
@@ -166,23 +138,23 @@ use {
                         timer = { progress_enddelay = 500, spinner = 1000, lsp_client_name_enddelay = 1000 },
                         spinner_symbols = { '🌑 ', '🌒 ', '🌓 ', '🌔 ', '🌕 ', '🌖 ', '🌗 ', '🌘 ' },
                     }
-                }
+                },
+                lualine_x = {'branch'},
+                lualine_y = {'progress'},
+                lualine_z = {'location'}
             },
             inactive_sections = {
-                lualine_c = {},
-                lualine_x = {'location'}
+                lualine_a = {},
+                lualine_b = {},
+                lualine_c = {'filename'},
+                lualine_x = {'location'},
+                lualine_y = {},
+                lualine_z = {}
             }
         }
     end
 }
 
--- Tabs
-use {
-    'romgrk/barbar.nvim',
-    requires = {'kyazdani42/nvim-web-devicons'},
-    disable = true,
-    opt = true,
-}
 
 -- Explorer
 use {

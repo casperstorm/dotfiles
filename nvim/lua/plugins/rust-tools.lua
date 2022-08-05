@@ -2,10 +2,9 @@ local opts = {
     tools = {
         autoSetHints = true,
         hover_with_actions = true,
-        runnables = {
-            use_telescope = true
-        },
+		hover_actions = { border = false },
         inlay_hints = {
+            show_parameter_hints = true,
         },
     },
 
@@ -19,6 +18,9 @@ local opts = {
             -- to enable rust-analyzer settings visit:
             -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
             ["rust-analyzer"] = {
+                diagnostics = {
+				    experimental = true,
+				},
                 -- enable clippy on save
                 checkOnSave = {
                     overrideCommand = {

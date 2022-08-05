@@ -11,6 +11,15 @@ cmd([[
   endif
 ]])
 
+
+-- no diagnostics in cargo dir
+cmd([[
+augroup RustDisableDiag
+    au!
+    autocmd BufRead,BufNewFile ~/.cargo/* echo 'disabling diagnostics in this buffer'
+augroup END
+]])
+
 -- hover diagnostics
 cmd([[
 autocmd CursorHold * lua vim.diagnostic.open_float(nil, { focusable = false })
