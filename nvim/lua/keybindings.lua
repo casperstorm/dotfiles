@@ -84,6 +84,7 @@ wk.register({
         r = {"<cmd>Telescope oldfiles<cr>", "recent files" },
         t = {"<cmd>Telescope live_grep<cr>", "text" },
         k = {"<cmd>Telescope keymaps<cr>", "keymap" },
+        m = {"<cmd>Telescope marks<cr>", "marks" },
         c = {"<cmd>Telescope commands<cr>", "commands" },
         p = {"<cmd>Telescope colorscheme<cr>", "colorschemes" },
     },
