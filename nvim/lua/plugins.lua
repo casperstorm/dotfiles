@@ -19,7 +19,9 @@ return require('packer').startup(function(use)
     -- Treesitter
     use {"nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = [[ require('plugins/nvim-treesitter') ]]}
 
+
     -- Color
+    use {'shaunsingh/oxocarbon.nvim', run = './install.sh'}
     use {"rebelot/kanagawa.nvim", 
     config = function()
         require("kanagawa").setup {
@@ -30,7 +32,7 @@ return require('packer').startup(function(use)
 
 -- Autopairs
 use {
-	"windwp/nvim-autopairs",
+    "windwp/nvim-autopairs",
     config = function() require("nvim-autopairs").setup {} end
 }
 
@@ -63,6 +65,10 @@ use {
                     file_ignore_patterns = { ".cargo/", ".git/" },
                     hidden = true,
                 },
+                diagnostics = {
+                    root_dir = os.getenv( "HOME" ) .. "/projects",
+                }
+
             },
         }
 
@@ -109,11 +115,35 @@ use {
     config = function()
         require('lualine').setup {
             sections = {
-                lualine_a = {'mode'},
                 lualine_b = {
-                    { 'diagnostics', sources = {"nvim_lsp"}, symbols = {error = ' ', warn = ' ', info = ' ', hint = ' '} },
-                    'encoding',
-                    'filetype'
+                    'branch',
+                    'diff',
+                    {
+                        'diagnostics',
+                        -- .get() for project wide counts (repo uses .get(0) for buffer only)
+                        sources = {
+                            function()
+                                local diagnostics = vim.diagnostic.get()
+                                local count = { 0, 0, 0, 0 }
+                                for _, diagnostic in ipairs(diagnostics) do
+                                    local name = vim.api.nvim_buf_get_name(diagnostic.bufnr)
+                                    local whitelist_dir = os.getenv( "HOME" ) .. "/projects"
+                                    local allowed = string.sub(name, 1, #whitelist_dir) == whitelist_dir
+
+                                    if allowed then
+                                        count[diagnostic.severity] = count[diagnostic.severity] + 1
+                                    end
+
+                                end
+                                return {
+                                    error = count[vim.diagnostic.severity.ERROR],
+                                    warn = count[vim.diagnostic.severity.WARN],
+                                    info = count[vim.diagnostic.severity.INFO],
+                                    hint = count[vim.diagnostic.severity.HINT],
+                                }
+                            end
+                        },
+                    }
                 },
                 lualine_c = {
                     {
@@ -138,23 +168,15 @@ use {
                         timer = { progress_enddelay = 500, spinner = 1000, lsp_client_name_enddelay = 1000 },
                         spinner_symbols = { '🌑 ', '🌒 ', '🌓 ', '🌔 ', '🌕 ', '🌖 ', '🌗 ', '🌘 ' },
                     }
-                },
-                lualine_x = {'branch'},
-                lualine_y = {'progress'},
-                lualine_z = {'location'}
+                }
             },
             inactive_sections = {
-                lualine_a = {},
-                lualine_b = {},
-                lualine_c = {'filename'},
-                lualine_x = {'location'},
-                lualine_y = {},
-                lualine_z = {}
+                lualine_c = {},
+                lualine_x = {'location'}
             }
         }
     end
 }
-
 
 -- Explorer
 use {
