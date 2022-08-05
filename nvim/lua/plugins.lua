@@ -22,10 +22,7 @@ return require("packer").startup(function(use)
     use "hrsh7th/cmp-cmdline"
 
     -- themes
-    use "EdenEast/nightfox.nvim"
     use "rebelot/kanagawa.nvim"
-    use "shaunsingh/moonlight.nvim"
-    use { "shaunsingh/oxocarbon.nvim", run = "./install.sh" }
 
     -- telescope
     use "nvim-telescope/telescope-ui-select.nvim" 
@@ -41,6 +38,7 @@ return require("packer").startup(function(use)
     use { "nvim-lualine/lualine.nvim", requires = {{ "kyazdani42/nvim-web-devicons"}, {"arkav/lualine-lsp-progress"}}, config = [[ require("plugins/lualine") ]] }
     use { "kyazdani42/nvim-tree.lua", requires = { "kyazdani42/nvim-web-devicons" }, config = [[ require("plugins/nvim-tree") ]] }
     use { "phaazon/hop.nvim", branch = "v2", config = [[ require("plugins/hop") ]] }
+    use {'glepnir/dashboard-nvim', opt = false, config = [[ require('plugins.dashboard') ]] }
 
     if packer_bootstrap then
         require("packer").sync()
