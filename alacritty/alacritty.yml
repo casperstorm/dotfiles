@@ -2,10 +2,10 @@ env:
   TERM: xterm-256color
 
 window:
-  decorations: buttonless
+  decorations: transparent
   padding:
    x: 15
-   y: 15
+   y: 30
 
 font:
   size: 13.0
