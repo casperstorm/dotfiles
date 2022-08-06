@@ -62,6 +62,16 @@ wk.register({
    e = {"<cmd>NvimTreeToggle<CR>", "explorer"},
    h = {"<cmd>nohlsearch<cr>", "clear search"},
    w = {"<cmd>w!<CR>", "save" },
+   c = { 
+       name = "color",
+       b = {
+           function()
+               vim.o.background = vim.o.background == "dark" and "light" or "dark"
+           end
+           , "toggle background dark/light" 
+       },
+       t = {"<cmd>Telescope colorscheme<CR>", "themes"}
+   },
    l = {
         name = "lsp",
         a = {"<cmd>lua vim.lsp.buf.code_action()<CR>", "code action"},

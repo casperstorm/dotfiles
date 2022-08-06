@@ -6,7 +6,6 @@ if fn.empty(fn.glob(install_path)) > 0 then
 end
 
 return require("packer").startup(function(use)
-    -- packer can manage itself
     use "wbthomason/packer.nvim"
 
     -- lsp 
@@ -22,6 +21,11 @@ return require("packer").startup(function(use)
     use "hrsh7th/cmp-cmdline"
 
     -- themes
+    use { 'glepnir/zephyr-nvim', requires = { 'nvim-treesitter/nvim-treesitter', opt = true }}
+    use 'folke/tokyonight.nvim'
+    use 'shaunsingh/moonlight.nvim'
+    use 'shaunsingh/nord.nvim'
+    use({ 'rose-pine/neovim', as = 'rose-pine' })
     use "rebelot/kanagawa.nvim"
 
     -- telescope

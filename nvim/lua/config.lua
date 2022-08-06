@@ -3,7 +3,7 @@ local cmd = vim.cmd
 -- colors
 cmd('let g:nvcode_termcolors=256') -- configure nvcode-color-schemes
 cmd('syntax on') -- syntax highlighting
-cmd('colorscheme kanagawa')
+cmd('colorscheme rose-pine')
 cmd([[
   if (has("termguicolors"))
     set termguicolors
