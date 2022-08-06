@@ -1,6 +1,6 @@
 # dotfiles
 
-<img width="1564" alt="screenshot" src="https://user-images.githubusercontent.com/2248455/159801536-6a5641d5-756c-4429-982e-6c04462d45ba.png">
+<img width="1624" alt="Screenshot 2022-08-07 at 00 41 25" src="https://user-images.githubusercontent.com/2248455/183268095-55a7b628-1307-4cdf-8999-89253128a0d9.png">
 
 ## prerequisites
 
