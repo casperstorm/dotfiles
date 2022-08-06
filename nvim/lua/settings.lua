@@ -36,4 +36,3 @@ set.updatetime = 300 -- Faster completion
 set.timeoutlen = 100 -- By default timeoutlen is 1000 ms
 set.clipboard = "unnamedplus" -- Copy paste between vim and everything else
 cmd('filetype plugin on') -- filetype detection
-set.guifont="Iosevka Nerd Font Mono:h11" -- neovide / gui font

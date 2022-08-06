@@ -12,6 +12,7 @@ eval "$(zoxide init zsh)"
 alias t="tmux attach || tmux new-session"
 alias l='ls -lAFh'
 alias ll='l'
+alias ls='l'
 alias vim='nvim'
 
 # zsh-autosuggestions & zsh-syntax-highlighting
