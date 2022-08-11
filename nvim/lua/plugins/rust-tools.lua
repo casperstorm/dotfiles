@@ -1,10 +1,7 @@
 local opts = {
     tools = {
-        autoSetHints = true,
-        hover_with_actions = true,
-		hover_actions = { border = false },
         inlay_hints = {
-            show_parameter_hints = true,
+            only_current_line = true,
         },
     },
 
