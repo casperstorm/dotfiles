@@ -84,6 +84,13 @@ wk.register({
         R = {"<cmd>lua vim.lsp.buf.rename()<CR>", "rename"},
         s = {"<cmd>lua require'telescope.builtin'.lsp_document_symbols{}<CR>", "go to symbol"},
     },
+    r = {
+        name = "rust",
+        r = {"<cmd>RustRunnables<CR>", "runnables"},
+        d = {"<cmd>RustOpenExternalDocs<CR>", "open docs"},
+        i = {"<cmd>RustToggleInlayHints<CR>", "toggle inlay hints"},
+
+    },
     f = {
         name = "find",
         f = {"<cmd>Telescope find_files<cr>", "all files" },
