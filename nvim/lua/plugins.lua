@@ -13,8 +13,14 @@ return require("packer").startup(function(use)
     use { "simrat39/rust-tools.nvim", config = [[ require("plugins/rust-tools") ]] }
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = [[ require("plugins/nvim-treesitter") ]] }
 
+    -- lsp servers, debuggers, linters
+    use { "williamboman/mason.nvim", config = [[ require("plugins/mason") ]] }
+    use "williamboman/mason-lspconfig.nvim"
+
     -- auto completion
     use { "hrsh7th/nvim-cmp", config = [[ require("plugins/nvim-cmp") ]] }
+    use "hrsh7th/cmp-nvim-lua"
+    use "hrsh7th/cmp-nvim-lsp-signature-help"
     use "hrsh7th/cmp-nvim-lsp"
     use "hrsh7th/cmp-buffer"
     use "hrsh7th/cmp-path"
