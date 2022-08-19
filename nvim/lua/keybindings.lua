@@ -112,6 +112,12 @@ wk.register({
         d = {"<cmd>Gvdiffsplit<cr>", "diffsplit"},
         s = {"<cmd>lua require'telescope.builtin'.git_status{}<CR>", "status"},
     },
+    j = {
+        name = "json",
+        f = {"<cmd>:%!jq .<CR>", "format"},
+        c = {"<cmd>:%!jq -c .<CR>", "compress"},
+
+    },
     p = {
         name = "packer",
         c = {"<cmd>PackerCompile<cr>", "compile"},
