@@ -13,7 +13,6 @@ fonts: https://www.nerdfonts.com/font-downloads
 brew install zoxide
 brew install rg
 brew install fd
-brew install asdf
 ```
 
 ## terminal
@@ -41,7 +40,6 @@ brew install rust-analyzer
 ## symbolic links
 ```bash
 # i normally make symbolic links to where i want configs
-# eg.
 ln -s tmux/.tmux.conf ~ 
 ln -s zsh/.zshrc ~
 ln -s nvim ~/.config
