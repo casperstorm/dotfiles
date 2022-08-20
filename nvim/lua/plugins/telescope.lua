@@ -12,7 +12,7 @@ local opts = {
             hidden = true,
         },
         diagnostics = {
-            root_dir = os.getenv( "HOME" ) .. "/projects",
+            root_dir = os.getenv("HOME") .. "/projects",
         },
         colorscheme = {
             enable_preview = true,

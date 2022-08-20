@@ -12,7 +12,7 @@ local opts = {
                         local count = { 0, 0, 0, 0 }
                         for _, diagnostic in ipairs(diagnostics) do
                             local name = vim.api.nvim_buf_get_name(diagnostic.bufnr)
-                            local whitelist_dir = os.getenv( "HOME" ) .. "/projects"
+                            local whitelist_dir = os.getenv("HOME") .. "/projects"
                             local allowed = string.sub(name, 1, #whitelist_dir) == whitelist_dir
 
                             if allowed then
@@ -38,16 +38,14 @@ local opts = {
             {
                 'lsp_progress',
                 -- With spinner
-                display_components = { 'lsp_client_name', 'spinner', { 'title', 'percentage', 'message' }},
                 separators = {
                     component = ' ',
                     progress = ' | ',
-                    message = { pre = '(', post = ')'},
                     percentage = { pre = '', post = '%% ' },
                     title = { pre = '', post = ': ' },
                     lsp_client_name = { pre = '[', post = ']' },
                     spinner = { pre = '', post = '' },
-                    message = { commenced = 'In Progress', completed = 'Completed' },
+                    message = { commenced = 'In Progress', completed = 'Completed', pre = '(', post = ')' },
                 },
                 display_components = { 'lsp_client_name', 'spinner', { 'title', 'percentage', 'message' } },
                 timer = { progress_enddelay = 500, spinner = 1000, lsp_client_name_enddelay = 1000 },
@@ -57,7 +55,7 @@ local opts = {
     },
     inactive_sections = {
         lualine_c = {},
-        lualine_x = {'location'}
+        lualine_x = { 'location' }
     }
 }
 

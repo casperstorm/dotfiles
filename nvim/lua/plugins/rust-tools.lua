@@ -16,14 +16,14 @@ local opts = {
             -- https://github.com/rust-analyzer/rust-analyzer/blob/master/docs/user/generated_config.adoc
             ["rust-analyzer"] = {
                 diagnostics = {
-				    experimental = true,
-				},
+                    experimental = true,
+                },
                 -- enable clippy on save
                 checkOnSave = {
                     overrideCommand = {
-                        "cargo", 
-                        "clippy", 
-                        "--all", 
+                        "cargo",
+                        "clippy",
+                        "--all",
                         "--message-format=json",
                         "--",
                         "-A", "clippy::too_many_arguments",

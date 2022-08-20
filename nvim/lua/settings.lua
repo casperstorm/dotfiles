@@ -7,8 +7,8 @@ cmd('set inccommand=split') -- Make substitution work in realtime
 set.hidden = true -- Required to keep multiple buffers open multiple buffers
 set.title = true
 TERMINAL = vim.fn.expand('$TERMINAL')
-cmd('let &titleold="'..TERMINAL..'"')
-set.titlestring="%<%F%=%l/%L - nvim"
+cmd('let &titleold="' .. TERMINAL .. '"')
+set.titlestring = "%<%F%=%l/%L - nvim"
 vim.wo.wrap = false -- Display long lines as just one line
 cmd('set whichwrap+=<,>,[,],h,l') -- move to next line with theses keys
 set.pumheight = 10 -- Makes popup menu smaller
