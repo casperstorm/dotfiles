@@ -18,7 +18,6 @@ map("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>")
 map("n", "<C-p>", "<cmd>Telescope find_files<cr>")
 map("n", ";", "<cmd>Telescope buffers<cr>")
 
-
 --- tabs
 map("n", "<Tab>", "<cmd>bn<CR>")
 map("n", "<S-Tab>", "<cmd>bp<CR>")
@@ -132,6 +131,10 @@ wk.register({
         i = { "<cmd>PackerInstall<cr>", "install" },
         l = { "<cmd>PackerClean<cr>", "clean" },
         s = { "<cmd>PackerSync<cr>", "sync" },
+    },
+    t = {
+        name = "tabs",
+        c = { "<cmd>BufferCloseAllButCurrent<cr>", "close all but current" },
     },
 }, {
     prefix = "<leader>"

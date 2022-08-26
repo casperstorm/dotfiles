@@ -57,7 +57,7 @@ return require("packer").startup(function(use)
         config = [[ require("plugins/nvim-tree") ]] }
     use { "phaazon/hop.nvim", branch = "v2", config = [[ require("plugins/hop") ]] }
     use { "glepnir/dashboard-nvim", opt = false, config = [[ require('plugins.dashboard') ]] }
-
+    use { 'romgrk/barbar.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }
 
     if packer_bootstrap then
         require("packer").sync()
