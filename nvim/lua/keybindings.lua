@@ -66,6 +66,7 @@ wk.register({
 
 wk.register({
     ["/"] = { "<Plug>kommentary_line_default", "comment" },
+    [" "] = { "<cmd>Telescope find_files<cr>", "all files" },
     e = { "<cmd>NvimTreeToggle<CR>", "explorer" },
     h = { "<cmd>nohlsearch<cr>", "clear search" },
     w = { "<cmd>w!<CR>", "save" },
