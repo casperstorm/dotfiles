@@ -56,6 +56,12 @@ map('o', 'F',
     "<cmd>lua require'hop'.hint_char1({ direction = require'hop.hint'.HintDirection.BEFORE_CURSOR, current_line_only = true, inclusive_jump = true })<cr>"
     , {})
 
+-- x, without yank
+map('n', 'x', '"_x', {})
+map('n', 'X', '"_X', {})
+map('v', 'x', '"_x', {})
+map('v', 'X', '"_X', {})
+
 -- whichkey
 local wk = require("which-key")
 wk.register({
@@ -65,11 +71,12 @@ wk.register({
 })
 
 wk.register({
-    ["/"] = { "<Plug>kommentary_line_default", "comment" },
     [" "] = { "<cmd>Telescope find_files<cr>", "all files" },
+    ["/"] = { "<Plug>kommentary_line_default", "comment" },
     e = { "<cmd>NvimTreeToggle<CR>", "explorer" },
     h = { "<cmd>nohlsearch<cr>", "clear search" },
     w = { "<cmd>w!<CR>", "save" },
+    W = { "<cmd>wa!<CR>", "save all" },
     c = {
         name = "color",
         b = {
