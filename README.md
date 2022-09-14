@@ -5,7 +5,6 @@
 ## prerequisites
 
 brew: https://brew.sh/  
-ohmyz: https://ohmyz.sh/#install  
 fonts: https://www.nerdfonts.com/font-downloads  
 
 ```bash
@@ -13,13 +12,13 @@ fonts: https://www.nerdfonts.com/font-downloads
 brew install zoxide
 brew install rg
 brew install fd
+brew install fish
 ```
 
 ## terminal
 ```bash
-brew install alacritty
-brew install zsh-syntax-highlighting
-brew install zsh-autosuggestions
+brew install kitty 
+brew install alacritty 
 brew install tmux
 # and tpm (tmux package manager)
 # https://github.com/tmux-plugins/tpm#installation
@@ -32,16 +31,14 @@ brew install nvim
 # https://github.com/wbthomason/packer.nvim#quickstart
 npm install -g nvim
 pip3 install nvim
-
-# lsp's for nvim
-brew install rust-analyzer
 ```
 
 ## symbolic links
 ```bash
 # i normally make symbolic links to where i want configs
 ln -s tmux/.tmux.conf ~ 
-ln -s zsh/.zshrc ~
+ln -s fish ~/.config
 ln -s nvim ~/.config
+ln -s kitty ~/.config
 ln -s alacritty ~/.config
 ```
