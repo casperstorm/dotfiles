@@ -66,6 +66,7 @@ map('v', 'X', '"_X', {})
 local wk = require("which-key")
 wk.register({
     ["/"] = { "<Plug>kommentary_visual_default", "comment", mode = "v" },
+    p = { '"_dP<CR>', "paste", mode = "v" },
 }, {
     prefix = "<leader>"
 })
