@@ -141,6 +141,10 @@ wk.register({
         l = { "<cmd>PackerClean<cr>", "clean" },
         s = { "<cmd>PackerSync<cr>", "sync" },
     },
+    s = {
+        name = "spelling",
+        s = { "<cmd>:set spell!<CR>", "toggle spell check" },
+    },
     t = {
         name = "tabs",
         c = { "<cmd>BufferCloseAllButCurrent<cr>", "close all but current" },
