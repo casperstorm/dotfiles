@@ -18,6 +18,13 @@ local opts = {
                 diagnostics = {
                     experimental = true,
                 },
+                imports = {
+                    prefix = "self",
+                    granularity = {
+                        enforce = true,
+                        group = "module",
+                    },
+                },
                 -- enable clippy on save
                 checkOnSave = {
                     overrideCommand = {
