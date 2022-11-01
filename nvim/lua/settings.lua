@@ -37,3 +37,5 @@ set.timeoutlen = 100 -- By default timeoutlen is 1000 ms
 set.clipboard = "unnamedplus" -- Copy paste between vim and everything else
 cmd('filetype plugin on') -- filetype detection
 vim.opt.guifont = { "Iosevka Nerd Font Mono", ":h12" } -- gui font
+cmd('set spelllang=en') -- spell languages
+cmd('set spellsuggest=best,9') -- spell suggestions
