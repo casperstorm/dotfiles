@@ -36,6 +36,16 @@ return require("packer").startup(function(use)
     use 'shaunsingh/nord.nvim'
     use({ 'rose-pine/neovim', as = 'rose-pine' })
     use "rebelot/kanagawa.nvim"
+    use {
+        "catppuccin/nvim",
+        as = "catppuccin",
+        config = function()
+            require("catppuccin").setup {
+                flavour = "macchiato" -- mocha, macchiato, frappe, latte
+            }
+            vim.api.nvim_command "colorscheme catppuccin"
+        end
+    }
 
     -- telescope
     use "nvim-telescope/telescope-ui-select.nvim"
