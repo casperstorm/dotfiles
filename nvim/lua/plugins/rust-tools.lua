@@ -25,14 +25,14 @@ local opts = {
                         group = "module",
                     },
                 },
-                -- rustfmt = {
-                --     extraArgs = {
-                --         "--config",
-                --         "imports_granularity=Module",
-                --         "--config",
-                --         "group_imports=StdExternalCrate",
-                --     },
-                -- },
+                rustfmt = {
+                    extraArgs = {
+                        "--config",
+                        "imports_granularity=Module",
+                        "--config",
+                        "group_imports=StdExternalCrate",
+                    },
+                },
                 -- enable clippy on save
                 checkOnSave = {
                     overrideCommand = {
@@ -54,6 +54,7 @@ local opts = {
                         "-A", "clippy::upper_case_acronyms",
                         "-A", "clippy::redundant_closure",
                         "-A", "clippy::many-single-char-names",
+                        "-A", "clippy::result_large_err",
                     },
                 },
             }
