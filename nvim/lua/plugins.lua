@@ -13,6 +13,7 @@ return require("packer").startup(function(use)
     use { "neovim/nvim-lspconfig", config = [[ require("plugins/lspconfig") ]] }
     use { "simrat39/rust-tools.nvim", config = [[ require("plugins/rust-tools") ]] }
     use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate", config = [[ require("plugins/nvim-treesitter") ]] }
+    use { 'jose-elias-alvarez/null-ls.nvim', config = [[ require('plugins/null-ls') ]] }
 
     -- lsp servers, debuggers, linters
     use { "williamboman/mason.nvim", config = [[ require("plugins/mason") ]] }
@@ -68,12 +69,12 @@ return require("packer").startup(function(use)
     use { "phaazon/hop.nvim", branch = "v2", config = [[ require("plugins/hop") ]] }
     use { "glepnir/dashboard-nvim", opt = false, config = [[ require('plugins.dashboard') ]] }
     use { 'romgrk/barbar.nvim', requires = { 'kyazdani42/nvim-web-devicons' } }
-    use {"akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
+    use { "akinsho/toggleterm.nvim", tag = 'v2.*', config = function()
         require("toggleterm").setup({
             direction = 'float',
             open_mapping = [[<C-t>]]
         })
-    end}
+    end }
 
     if packer_bootstrap then
         require("packer").sync()
