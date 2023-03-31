@@ -10,7 +10,7 @@ vim.diagnostic.config({
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
 
-require 'lspconfig'.sumneko_lua.setup {
+require 'lspconfig'.lua_ls.setup {
     settings = {
         Lua = {
             runtime = {
@@ -38,3 +38,4 @@ require 'lspconfig'.sumneko_lua.setup {
 require 'lspconfig'.tsserver.setup {}
 require 'lspconfig'.svelte.setup {}
 require 'lspconfig'.tailwindcss.setup {}
+require 'lspconfig'.yamlls.setup {}
