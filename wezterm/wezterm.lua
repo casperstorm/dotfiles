@@ -5,6 +5,13 @@ config.color_scheme = 'rose-pine'
 config.font = wezterm.font 'Iosevka Term'
 config.font_size = 13.0
 config.window_decorations = "RESIZE"
+
+config.window_frame = {
+  font = wezterm.font { family = 'Iosevka Term', weight = 'Bold' },
+  font_size = 12.0,
+}
+
+
 config.keys = {
   {
     key = 'LeftArrow', mods = 'CTRL',
