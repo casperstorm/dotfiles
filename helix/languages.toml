@@ -1,5 +1,5 @@
 [[language]]
 name = "rust"
 
-[language.config]
-checkOnSave = { command = "clippy" }
+[language.config.check]
+command = "clippy"

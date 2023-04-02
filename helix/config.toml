@@ -1,14 +1,12 @@
+theme = "kanagawa"
+
 [editor]
 line-number = "relative"
-scroll-lines = 1
 cursorline = true
 auto-save = false
-completion-trigger-len = 1
 true-color = true
 color-modes = true
 auto-pairs = true
-rulers = [120]
-idle-timeout = 50
 
 [editor.cursor-shape]
 insert = "bar"
@@ -17,7 +15,6 @@ select = "underline"
 
 [editor.indent-guides]
 render = true
-character = "▏"
 
 [editor.lsp]
 display-messages = true
