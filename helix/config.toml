@@ -1,4 +1,4 @@
-theme = "kanagawa"
+theme = "ferra"
 
 [editor]
 line-number = "relative"
@@ -25,4 +25,4 @@ center = ["selections", "primary-selection-length", "position", "position-percen
 right = ["diagnostics", "workspace-diagnostics"]
 
 [keys.insert]
-esc = ["collapse_selection", "normal_mode"]
+esc = ["collapse_selection", "normal_mode", ":write"]
